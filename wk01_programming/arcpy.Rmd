@@ -15,6 +15,13 @@ output:
 
 Trying out http://www.emoji-cheat-sheet.com :zap:. Or https://octicons.github.com (see [usage](https://octicons.github.com/usage/))?
 
+## Git, Github
+
+- [git_notes · NCEAS/training](https://github.com/NCEAS/training/blob/master/2014-oss/day-04/git_notes.md)
+- [git reference](http://software-carpentry.org/v5/novice/ref/02-git.html)
+- http://www.software-carpentry.org/v5/novice/git
+- 
+
 ## Something Familiar
 
 - Lab 3: Siting Wind Energy
@@ -70,6 +77,7 @@ Could form criteria of thresholds.
 
 # Other Python Skills
 
+- http://ipython.org/ipython-doc/stable/interactive/tutorial.html
 - http://pandas.pydata.org
 - [scientific python tutorial](http://www3.kis.uni-freiburg.de/~rrezaei/python.html)
 - [Course: Marine GIS Applications (ArcGIS) (2012)](http://classroom.oceanteacher.org/course/view.php?id=123)
@@ -78,12 +86,61 @@ Could form criteria of thresholds.
 - [Channel: Tutorials | ArcGIS Video](http://video.arcgis.com/channel/11/tutorials/videos)
 - [Tutorials | ArcGIS Resources](http://resources.arcgis.com/en/Tutorials/)
 
-## Final Project: Species
+books:
+
+- [Esri Press | GIS Tutorial for Python Scripting](http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=256&moduleID=0)
+- [Esri Press | Python Scripting for ArcGIS](http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=224&moduleID=0)
+
+training:
+- [Esri Training | Python for Everyone](http://training.esri.com/gateway/index.cfm?fa=catalog.webcoursedetail&courseid=2520)
+- [Esri Training | Using Python in ArcGIS Desktop 10](http://training.esri.com/gateway/index.cfm?fa=catalog.webCourseDetail&courseID=1868)
+- [Esri Training | Creating Python Toolboxes Using ArcGIS 10.1](http://training.esri.com/gateway/index.cfm?fa=catalog.webCourseDetail&courseid=2523)
+
+resources:
+- http://arcpy.wordpress.com/
+
+## Final Project: Species - GBIF
 
 Get species data from GBIF, eg [Humpback whale](http://www.gbif.org/species/5220086).
 
 ![](./img/gbif_humpback_whale.png)
 
+
+## Final Project: Species - rgbif
+
+<div class="notes">
+```r
+# install.packages(c('rgdal','rgeos'), repos='http://www.stats.ox.ac.uk/pub/RWin')
+# devtools::install_github('ropensci/rgbif')
+```
+</div>
+
+```{r rgbif}
+suppressPackageStartupMessages(library(rgbif))
+key = name_lookup(query='Humpback whale', rank='species')$data$nubKey[1] # 5220086
+dat = occ_search(taxonKey=key, return='data', limit=200)
+gbifmap(input=dat)
+```
+
+See: [rgbif tutorial](http://ropensci.org/tutorials/rgbif_tutorial.html)
+
+## Final Project: Species - env data {.smaller}
+
+[raster::getData](http://www.inside-r.org/packages/cran/raster/docs/getData) - get geographic data for anywhere in the world
+
+  'alt' stands for altitude (elevation); the data were aggregated from SRTM 90 m resolution data between -60 and 60 latitude. 'GADM' is a database of global administrative boundaries. 'worldclim' is a database of global interpolated climate data. 'SRTM' refers to the hole-filled CGIAR-SRTM (90 m resolution). 'countries' has polygons for all countries at a higher resolution than the 'wrld_simpl' data in the maptools pacakge .
+
+Terrestrial:
+
+- [CGIAR-CSI SRTM 90m DEM Digital Elevation Database](http://srtm.csi.cgiar.org/)
+
+Marine:
+
+Either:
+
+- http://topex.ucsd.edu/WWW_html/srtm30_plus.html
+- http://nationalmap.gov/viewer.html
+- http://www.cirgis.org/data.html
 ## Final Project: Ecosystem
 
 InVEST documentation, which one?:

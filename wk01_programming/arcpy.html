@@ -87,7 +87,17 @@
           </hgroup>
   </slide>
 
-<slide class=''><hgroup><h2>Something Familiar</h2></hgroup><article  id="something-familiar">
+<slide class=''><hgroup><h2>Markdown</h2></hgroup><article  id="markdown">
+
+<ul>
+<li><a href='https://guides.github.com/features/mastering-markdown/' title=''>https://guides.github.com/features/mastering-markdown/</a></li>
+<li>cheatsheet</li>
+<li><a href='https://stackedit.io' title=''>https://stackedit.io</a> for side by side</li>
+</ul>
+
+<p>Trying out <a href='http://www.emoji-cheat-sheet.com' title=''>http://www.emoji-cheat-sheet.com</a> :zap:. Or <a href='https://octicons.github.com' title=''>https://octicons.github.com</a> (see <a href='https://octicons.github.com/usage/' title=''>usage</a>)?</p>
+
+</article></slide><slide class=''><hgroup><h2>Something Familiar</h2></hgroup><article  id="something-familiar">
 
 <ul>
 <li>Lab 3: Siting Wind Energy</li>
@@ -131,6 +141,7 @@
 
 <ul>
 <li>monthly variance in wind angle</li>
+<li><a href='http://blogs.esri.com/esri/arcgis/2013/07/17/displaying-speed-and-direction-symbology-from-u-and-v-vectors/' title=''>Displaying Speed and Direction Symbology from U and V vectors | ArcGIS Blog</a></li>
 </ul>
 
 <p>Could form criteria of thresholds.</p>
@@ -148,13 +159,49 @@
 
 <ul>
 <li><a href='http://pandas.pydata.org' title=''>http://pandas.pydata.org</a></li>
+<li><a href='http://www3.kis.uni-freiburg.de/~rrezaei/python.html' title=''>scientific python tutorial</a></li>
+<li><a href='http://classroom.oceanteacher.org/course/view.php?id=123' title=''>Course: Marine GIS Applications (ArcGIS) (2012)</a></li>
+<li><a href='http://mgel.env.duke.edu/mget/documentation/arcgis-tutorial/' title=''>ArcGIS Tutorial » Marine Geospatial Ecology Tools</a></li>
+<li><a href='http://edcommunity.esri.com/Resources/ArcLessons' title=''>ArcLessons - EdCommunity - Esri GIS</a></li>
+<li><a href='http://video.arcgis.com/channel/11/tutorials/videos' title=''>Channel: Tutorials | ArcGIS Video</a></li>
+<li><a href='http://resources.arcgis.com/en/Tutorials/' title=''>Tutorials | ArcGIS Resources</a></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Final Project: Species</h2></hgroup><article  id="final-project-species">
+</article></slide><slide class=''><hgroup><h2>Final Project: Species - GBIF</h2></hgroup><article  id="final-project-species---gbif">
 
 <p>Get species data from GBIF, eg <a href='http://www.gbif.org/species/5220086' title=''>Humpback whale</a>.</p>
 
 <img src='img/gbif_humpback_whale.png' title=''/>
+
+</article></slide><slide class=''><hgroup><h2>Final Project: Species - rgbif</h2></hgroup><article  id="final-project-species---rgbif">
+
+<aside class='note'><section><pre class = 'prettyprint lang-r'># install.packages(c(&#39;rgdal&#39;,&#39;rgeos&#39;), repos=&#39;http://www.stats.ox.ac.uk/pub/RWin&#39;)
+# devtools::install_github(&#39;ropensci/rgbif&#39;)</pre></section></aside>
+
+<pre class = 'prettyprint lang-r'>suppressPackageStartupMessages(library(rgbif))
+key = name_lookup(query=&#39;Humpback whale&#39;, rank=&#39;species&#39;)$data$nubKey[1] # 5220086
+dat = occ_search(taxonKey=key, return=&#39;data&#39;, limit=200)
+gbifmap(input=dat)</pre>
+
+<pre >## Rendering map...plotting 192 points</pre>
+
+<p><img src="arcpy_files/figure-html/rgbif.png" title="plot of chunk rgbif" alt="plot of chunk rgbif" width="720" /></p>
+
+<p>See: <a href='http://ropensci.org/tutorials/rgbif_tutorial.html' title=''>rgbif tutorial</a></p>
+
+</article></slide><slide class=''><hgroup><h2>Final Project: Species - env data</h2></hgroup><article  id="final-project-species---env-data">
+
+<p><a href='http://www.inside-r.org/packages/cran/raster/docs/getData' title=''>raster::getData</a> - get geographic data for anywhere in the world</p>
+
+<p>&#39;alt&#39; stands for altitude (elevation); the data were aggregated from SRTM 90 m resolution data between -60 and 60 latitude. &#39;GADM&#39; is a database of global administrative boundaries. &#39;worldclim&#39; is a database of global interpolated climate data. &#39;SRTM&#39; refers to the hole-filled CGIAR-SRTM (90 m resolution). &#39;countries&#39; has polygons for all countries at a higher resolution than the &#39;wrld_simpl&#39; data in the maptools pacakge .</p>
+
+<p>Terrestrial:</p>
+
+<ul>
+<li><a href='http://srtm.csi.cgiar.org/' title=''>CGIAR-CSI SRTM 90m DEM Digital Elevation Database</a></li>
+</ul>
+
+<p>Marine:</p>
 
 </article></slide><slide class=''><hgroup><h2>Final Project: Ecosystem</h2></hgroup><article  id="final-project-ecosystem">
 
@@ -175,7 +222,29 @@
 
 <p>Not using.</p>
 
+</article></slide><slide class=''><hgroup><h2>sea level rise</h2></hgroup><article  id="sea-level-rise">
+
+<p><a href='http://catalog.data.gov/dataset?q=%22sea+level+rise%22+california&amp;sort=score+desc%2C+name+asc&amp;ext_location=&amp;ext_bbox=&amp;ext_prev_extent=-254.53125%2C-75.84516854027044%2C54.84375%2C83.19489563661588' title=''>Search for a Dataset - Data.gov: 19 datasets found for &quot;&quot;sea level rise&quot; california&quot;</a></p>
+
+</article></slide><slide class=''><hgroup><h2>windng</h2></hgroup><article  id="windng">
+
+<p>This <a href='http://nbviewer.ipython.org/gist/goyodiaz/4718433/wind_sample.ipynb' title=''>windng notebook</a> shows some of the features of windng:</p>
+
+<ul>
+<li>Loading wind data files into pandas DataFrame.</li>
+<li>Monthly means.</li>
+<li>Selection of a reference period.</li>
+<li>Long term analysis.</li>
+<li>Speed and direction distribution.</li>
+<li>Turbulence intensity calculations.</li>
+<li>Nicely plotting all that stuff.</li>
+</ul>
+
 </article></slide><slide class=''><hgroup><h2>Install windml</h2></hgroup><article  id="install-windml">
+
+<p><a href='http://windml.org/index.html' title=''>windML</a></p>
+
+<p>The windML framework provides an easy-to-use access to wind data sources within the Python world, building upon numpy, scipy, sklearn, and matplotlib. As a machine learning module, it provides versatile tools for various learning tasks like time-series prediction, classification, clustering, dimensionality reduction, and related tasks.</p>
 
 <p>For windml, need also: <a href='http://scikit-learn.org/stable/install.html' title=''>scikit-learn</a>, numpy, scipy</p>
 

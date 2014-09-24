@@ -5,6 +5,15 @@ date: "September 24, 2014"
 output: html_document
 ---
 
+## Consuming vs Publishing
+
+Consuming:
+- [ArcGIS Help 10.2 - About using OGC service layers](http://resources.arcgis.com/en/help/main/10.2/index.html#//00sp0000000n000000)
+- [ArcGIS Help 10.2 - Make WCS Layer (Data Management)](http://resources.arcgis.com/en/help/main/10.2/index.html#//00170000006w000000)
+
+Publishing:
+- [Esri Training | Creating Hosted Map Services with ArcGIS Online](http://training.esri.com/gateway/index.cfm?fa=catalog.webCourseDetail&courseid=2563)
+
 ## Free
 
 - Github with Leaflet, rawgit.com of HTML
