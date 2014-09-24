@@ -1,0 +1,149 @@
+---
+title: "Programming in ArcGIS"
+author: "Ben Best, Jim Frew"
+date: "October 3, 2014"
+output: 
+  ioslides_presentation:
+    self_contained: false
+---
+
+## Something Familiar
+
+- Lab 3: Siting Wind Energy
+
+## Detailed Wind Analysis {.smaller}
+
+[NREL Wind Data](http://www.nrel.gov/gis/data_wind.html)
+
+**50-Meter Resolution (50-meter height above surface)**
+
+These datasets are geographic shapefiles generated from the original raster data. The original raster data varied in resolution from 200-meter to 1000-meter cell sizes. The data provide an estimate of annual average wind resource for specific states or regions. The data are separated into two distinct groups: NREL produced, and AWS Truepower produced/NREL validated. To learn more, please see [Wind Data Details](http://www.nrel.gov/gis/wind_detail.html).
+
+The NREL-produced map data only applies to areas of low surface roughness (i.e. grassy plains), and excludes areas with slopes greater than 20%. For areas of high surface roughness (i.e. forests), the values shown may need to be reduced by one or more power classes. The TrueWind-produced resource estimates factor in surface roughness in their calculations, and do not exclude areas with slopes greater than 20%.
+
+**Data**: California Wind 50m Resolution  ([California_50m_wind.zip](http://www.nrel.gov/gis/data/GIS_Data_Technology_Specific/United_States/Wind/High_Resolution/California_50m_wind.zip))  05/18/2012  [ca_50m_metadata.htm](http://www.nrel.gov/gis/data/GIS_Data_Technology_Specific/United_States/Wind/metadata/ca_50m_metadata.htm)	[CA 50m.kmz](https://mapservices.nrel.gov/data_res/wms/kml?layers=data_res:ca_50mwind)
+
+
+## NOAA NCDC
+
+Links:
+
+- http://www.ncdc.noaa.gov/cdo-web/datasets
+- http://www.ncdc.noaa.gov/data-access/land-based-station-data
+- http://www.ncdc.noaa.gov/societal-impacts/wind/
+- [Climatology data access with ulmo](http://earthpy.org/ulmo.html)
+
+## U.S. Wind Climatology {.smaller}
+
+- [2013 U-Component Wind Data](ftp://ftp.cdc.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/surface/uwnd.sig995.2013.nc)
+- [2013 V-Component Wind Data](ftp://ftp.cdc.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/surface/vwnd.sig995.2013.nc)
+
+To calculate:
+- monthly mean wind speed ($s$) from x ($u$) and y ($v$) components use Pythagorean theorem: 
+
+  $$
+  s = \sqrt{u^2 + v^2}
+  $$
+
+- monthly variance in wind angle
+- [Displaying Speed and Direction Symbology from U and V vectors | ArcGIS Blog](http://blogs.esri.com/esri/arcgis/2013/07/17/displaying-speed-and-direction-symbology-from-u-and-v-vectors/)
+
+Could form criteria of thresholds.
+
+![](ftp://ftp.ncdc.noaa.gov/pub/data/cmb/wind/images/sig995_wind_201308.gif)
+
+
+## ArcPy
+  
+- **.py** Python script extension
+
+- **arcpy** Python module with ArcGIS functionality
+
+
+# Other Python Skills
+
+- http://pandas.pydata.org
+- [scientific python tutorial](http://www3.kis.uni-freiburg.de/~rrezaei/python.html)
+- [Course: Marine GIS Applications (ArcGIS) (2012)](http://classroom.oceanteacher.org/course/view.php?id=123)
+- [ArcGIS Tutorial » Marine Geospatial Ecology Tools](http://mgel.env.duke.edu/mget/documentation/arcgis-tutorial/)
+- [ArcLessons - EdCommunity - Esri GIS](http://edcommunity.esri.com/Resources/ArcLessons)
+- [Channel: Tutorials | ArcGIS Video](http://video.arcgis.com/channel/11/tutorials/videos)
+- [Tutorials | ArcGIS Resources](http://resources.arcgis.com/en/Tutorials/)
+
+## Final Project: Species
+
+Get species data from GBIF, eg [Humpback whale](http://www.gbif.org/species/5220086).
+
+![](./img/gbif_humpback_whale.png)
+
+## Final Project: Ecosystem
+
+InVEST documentation, which one?:
+
+- [Wave Attenuation & Erosion Reduction: Coastal Protection](http://ncp-dev.stanford.edu/~dataportal/invest-releases/documentation/current_release/coastal_protection.html)
+- [Coastal Vulnerability Model](http://ncp-dev.stanford.edu/~dataportal/invest-releases/documentation/current_release/coastal_vulnerability.html)
+
+Rec'd Reading:
+
+- Guerry, A. D., Ruckelshaus, M. H., Arkema, K. K., Bernhardt, J. R., Guannel, G., Kim, C.-K., … Spencer, J. (2012). **Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning**. _International Journal of Biodiversity Science, Ecosystem Services & Management_, 1–15. [doi:10.1080/21513732.2011.647835](http://dx.doi.org/10.1080/21513732.2011.647835)
+
+# OLD...
+
+Not using.
+
+## windng
+
+This [windng notebook](http://nbviewer.ipython.org/gist/goyodiaz/4718433/wind_sample.ipynb) shows some of the features of windng:
+
+- Loading wind data files into pandas DataFrame.
+- Monthly means.
+- Selection of a reference period.
+- Long term analysis.
+- Speed and direction distribution.
+- Turbulence intensity calculations.
+- Nicely plotting all that stuff.
+
+## Install windml
+
+[windML](http://windml.org/index.html)
+
+The windML framework provides an easy-to-use access to wind data sources within the Python world, building upon numpy, scipy, sklearn, and matplotlib. As a machine learning module, it provides versatile tools for various learning tasks like time-series prediction, classification, clustering, dimensionality reduction, and related tasks.
+
+
+For windml, need also: [scikit-learn](http://scikit-learn.org/stable/install.html), numpy, scipy
+
+```bash
+# change to home dir, make github dir, change there
+cd ~; mkdir github; cd github
+
+# install dependancies
+pip install -U numpy scipy scikit-learn
+
+# add windml
+git clone https://github.com/cigroup-ol/windml.git
+export PYTHONPATH=$PYTHONPATH:~/github/windml
+```
+
+## Brief Example
+
+```python
+from windml.datasets.nrel import NREL
+from windml.mapping.power_mapping import PowerMapping
+from sklearn.neighbors import KNeighborsRegressor
+import math
+
+windpark = NREL().get_windpark(NREL.park_id['tehachapi'], 3, 2004)
+target = windpark.get_target()
+
+feature_window, horizon = 3, 3
+mapping = PowerMapping()
+X = mapping.get_features_park(windpark, feature_window, horizon)
+Y = mapping.get_labels_turbine(target, feature_window, horizon)
+reg = KNeighborsRegressor(10, 'uniform')
+
+train_to, test_to = int(math.floor(len(X) * 0.5)), len(X)
+train_step, test_step = 5, 5
+reg = reg.fit(X[0:train_to:train_step], Y[0:train_to:train_step])
+y_hat = reg.predict(X[train_to:test_to:test_step])
+
+```

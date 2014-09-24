@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Programming in ArcGIS</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="generator" content="pandoc" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" media="all" href="arcpy_files/ioslides-13.5.1/fonts/fonts.css">
+
+  <link rel="stylesheet" media="all" href="arcpy_files/ioslides-13.5.1/theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="arcpy_files/ioslides-13.5.1/theme/css/phone.css">
+
+  <base target="_blank">
+
+  <script type="text/javascript">
+    var SLIDE_CONFIG = {
+      // Slide settings
+      settings: {
+                title: 'Programming in ArcGIS',
+                        useBuilds: true,
+        usePrettify: true,
+        enableSlideAreas: true,
+        enableTouch: true,
+              },
+
+      // Author information
+      presenters: [
+            {
+        name: 'Ben Best, Jim Frew'
+      },
+            ]
+    };
+  </script>
+
+  <style type="text/css">
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    slides > slide {
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .auto-fadein {
+      -webkit-transition: opacity 0.6s ease-in;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s ease-in 0.4s;
+      -o-transition: opacity 0.6s ease-in 0.4s;
+      transition: opacity 0.6s ease-in 0.4s;
+      opacity: 0;
+    }
+
+  </style>
+
+
+
+</head>
+
+<body style="opacity: 0">
+
+<slides>
+
+  <slide class="title-slide segue nobackground">
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+            <p style="margin-top: 6px; margin-left: -2px;">October 3, 2014</p>
+          </hgroup>
+  </slide>
+
+<slide class=''><hgroup><h2>Something Familiar</h2></hgroup><article  id="something-familiar">
+
+<ul>
+<li>Lab 3: Siting Wind Energy</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Detailed Wind Analysis</h2></hgroup><article  id="detailed-wind-analysis" class="smaller">
+
+<p><a href='http://www.nrel.gov/gis/data_wind.html' title=''>NREL Wind Data</a></p>
+
+<p><strong>50-Meter Resolution (50-meter height above surface)</strong></p>
+
+<p>These datasets are geographic shapefiles generated from the original raster data. The original raster data varied in resolution from 200-meter to 1000-meter cell sizes. The data provide an estimate of annual average wind resource for specific states or regions. The data are separated into two distinct groups: NREL produced, and AWS Truepower produced/NREL validated. To learn more, please see <a href='http://www.nrel.gov/gis/wind_detail.html' title=''>Wind Data Details</a>.</p>
+
+<p>The NREL-produced map data only applies to areas of low surface roughness (i.e. grassy plains), and excludes areas with slopes greater than 20%. For areas of high surface roughness (i.e. forests), the values shown may need to be reduced by one or more power classes. The TrueWind-produced resource estimates factor in surface roughness in their calculations, and do not exclude areas with slopes greater than 20%.</p>
+
+<p><strong>Data</strong>: California Wind 50m Resolution (<a href='http://www.nrel.gov/gis/data/GIS_Data_Technology_Specific/United_States/Wind/High_Resolution/California_50m_wind.zip' title=''>California_50m_wind.zip</a>) 05/18/2012 <a href='http://www.nrel.gov/gis/data/GIS_Data_Technology_Specific/United_States/Wind/metadata/ca_50m_metadata.htm' title=''>ca_50m_metadata.htm</a> <a href='https://mapservices.nrel.gov/data_res/wms/kml?layers=data_res:ca_50mwind' title=''>CA 50m.kmz</a></p>
+
+</article></slide><slide class=''><hgroup><h2>NOAA NCDC</h2></hgroup><article  id="noaa-ncdc">
+
+<p>Links:</p>
+
+<ul>
+<li><a href='http://www.ncdc.noaa.gov/cdo-web/datasets' title=''>http://www.ncdc.noaa.gov/cdo-web/datasets</a></li>
+<li><a href='http://www.ncdc.noaa.gov/data-access/land-based-station-data' title=''>http://www.ncdc.noaa.gov/data-access/land-based-station-data</a></li>
+<li><a href='http://www.ncdc.noaa.gov/societal-impacts/wind/' title=''>http://www.ncdc.noaa.gov/societal-impacts/wind/</a></li>
+<li><a href='http://earthpy.org/ulmo.html' title=''>Climatology data access with ulmo</a></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>U.S. Wind Climatology</h2></hgroup><article  id="u.s.-wind-climatology" class="smaller">
+
+<ul>
+<li><a href='ftp://ftp.cdc.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/surface/uwnd.sig995.2013.nc' title=''>2013 U-Component Wind Data</a></li>
+<li><a href='ftp://ftp.cdc.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/surface/vwnd.sig995.2013.nc' title=''>2013 V-Component Wind Data</a></li>
+</ul>
+
+<p>To calculate: - monthly mean wind speed (\(s\)) from x (\(u\)) and y (\(v\)) components use Pythagorean theorem:</p>
+
+<p>\[
+  s = \sqrt{u^2 + v^2}
+  \]</p>
+
+<ul>
+<li>monthly variance in wind angle</li>
+</ul>
+
+<p>Could form criteria of thresholds.</p>
+
+<img src='ftp://ftp.ncdc.noaa.gov/pub/data/cmb/wind/images/sig995_wind_201308.gif' title=''/>
+
+</article></slide><slide class=''><hgroup><h2>ArcPy</h2></hgroup><article  id="arcpy">
+
+<ul>
+<li><p><strong>.py</strong> Python script extension</p></li>
+<li><p><strong>arcpy</strong> Python module with ArcGIS functionality</p></li>
+</ul>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Other Python Skills</h2></hgroup><article  id="other-python-skills">
+
+<ul>
+<li><a href='http://pandas.pydata.org' title=''>http://pandas.pydata.org</a></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Final Project: Species</h2></hgroup><article  id="final-project-species">
+
+<p>Get species data from GBIF, eg <a href='http://www.gbif.org/species/5220086' title=''>Humpback whale</a>.</p>
+
+<img src='img/gbif_humpback_whale.png' title=''/>
+
+</article></slide><slide class=''><hgroup><h2>Final Project: Ecosystem</h2></hgroup><article  id="final-project-ecosystem">
+
+<p>InVEST documentation, which one?:</p>
+
+<ul>
+<li><a href='http://ncp-dev.stanford.edu/~dataportal/invest-releases/documentation/current_release/coastal_protection.html' title=''>Wave Attenuation &amp; Erosion Reduction: Coastal Protection</a></li>
+<li><a href='http://ncp-dev.stanford.edu/~dataportal/invest-releases/documentation/current_release/coastal_vulnerability.html' title=''>Coastal Vulnerability Model</a></li>
+</ul>
+
+<p>Rec&#39;d Reading:</p>
+
+<ul>
+<li>Guerry, A. D., Ruckelshaus, M. H., Arkema, K. K., Bernhardt, J. R., Guannel, G., Kim, C.-K., … Spencer, J. (2012). <strong>Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning</strong>. <em>International Journal of Biodiversity Science, Ecosystem Services &amp; Management</em>, 1–15. <a href='http://dx.doi.org/10.1080/21513732.2011.647835' title=''><a href='doi:10.1080/21513732.2011.647835' title=''>doi:10.1080/21513732.2011.647835</a></a></li>
+</ul>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>OLD&#8230;</h2></hgroup><article  id="old...">
+
+<p>Not using.</p>
+
+</article></slide><slide class=''><hgroup><h2>Install windml</h2></hgroup><article  id="install-windml">
+
+<p>For windml, need also: <a href='http://scikit-learn.org/stable/install.html' title=''>scikit-learn</a>, numpy, scipy</p>
+
+<pre class = 'prettyprint lang-bash'># change to home dir, make github dir, change there
+cd ~; mkdir github; cd github
+
+# install dependancies
+pip install -U numpy scipy scikit-learn
+
+# add windml
+git clone https://github.com/cigroup-ol/windml.git
+export PYTHONPATH=$PYTHONPATH:~/github/windml</pre>
+
+</article></slide><slide class=''><hgroup><h2>Brief Example</h2></hgroup><article  id="brief-example">
+
+<pre class = 'prettyprint lang-python'>from windml.datasets.nrel import NREL
+from windml.mapping.power_mapping import PowerMapping
+from sklearn.neighbors import KNeighborsRegressor
+import math
+
+windpark = NREL().get_windpark(NREL.park_id[&#39;tehachapi&#39;], 3, 2004)
+target = windpark.get_target()
+
+feature_window, horizon = 3, 3
+mapping = PowerMapping()
+X = mapping.get_features_park(windpark, feature_window, horizon)
+Y = mapping.get_labels_turbine(target, feature_window, horizon)
+reg = KNeighborsRegressor(10, &#39;uniform&#39;)
+
+train_to, test_to = int(math.floor(len(X) * 0.5)), len(X)
+train_step, test_step = 5, 5
+reg = reg.fit(X[0:train_to:train_step], Y[0:train_to:train_step])
+y_hat = reg.predict(X[train_to:test_to:test_step])
+</pre></article></slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script src="arcpy_files/ioslides-13.5.1/js/modernizr.custom.45394.js"></script>
+<script src="arcpy_files/ioslides-13.5.1/js/prettify/prettify.js"></script>
+<script src="arcpy_files/ioslides-13.5.1/js/prettify/lang-r.js"></script>
+<script src="arcpy_files/ioslides-13.5.1/js/prettify/lang-yaml.js"></script>
+<script src="arcpy_files/ioslides-13.5.1/js/hammer.js"></script>
+<script src="arcpy_files/ioslides-13.5.1/js/slide-controller.js"></script>
+<script src="arcpy_files/ioslides-13.5.1/js/slide-deck.js"></script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!-- map slide visiblity events into shiny -->
+<script>
+  (function() {
+    if (window.jQuery) {
+       window.jQuery(document).on('slideleave', function(e) {
+         window.jQuery(e.target).trigger('hidden');
+      });
+       window.jQuery(document).on('slideenter', function(e) {
+         window.jQuery(e.target).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
