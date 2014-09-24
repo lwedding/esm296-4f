@@ -10,8 +10,7 @@ output: html_document
 - Github with Leaflet, rawgit.com of HTML
 - Google Fusion / Maps
 - ...
-
-:zap:
+- https://wiki.state.ma.us/confluence/display/massgis/GeoServer+-+WFS+-+Examples
 
 ## ArcGIS Online
 

@@ -7,6 +7,14 @@ output:
     self_contained: false
 ---
 
+## Markdown
+
+- https://guides.github.com/features/mastering-markdown/
+- cheatsheet
+- https://stackedit.io for side by side
+
+Trying out http://www.emoji-cheat-sheet.com :zap:. Or https://octicons.github.com (see [usage](https://octicons.github.com/usage/))?
+
 ## Something Familiar
 
 - Lab 3: Siting Wind Energy
@@ -90,6 +98,11 @@ Rec'd Reading:
 # OLD...
 
 Not using.
+
+## sea level rise
+
+[Search for a Dataset - Data.gov: 19 datasets found for ""sea level rise" california"](http://catalog.data.gov/dataset?q=%22sea+level+rise%22+california&sort=score+desc%2C+name+asc&ext_location=&ext_bbox=&ext_prev_extent=-254.53125%2C-75.84516854027044%2C54.84375%2C83.19489563661588)
+
 
 ## windng
 
