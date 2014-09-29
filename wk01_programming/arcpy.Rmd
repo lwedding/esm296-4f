@@ -229,3 +229,122 @@ reg = reg.fit(X[0:train_to:train_step], Y[0:train_to:train_step])
 y_hat = reg.predict(X[train_to:test_to:test_step])
 
 ```
+
+# notes from bbest_test@frew-test...
+
+## git bash
+
+
+### Setup name and password
+
+```bash
+git config --global user.name "Ben Best"
+git config --global user.email bbest@nceas.ucsb.edu
+```
+
+### navigating 
+
+Comments preceeded with `#`.
+
+```bash
+# change directory to home
+cd ~
+
+# list files and folders
+ls
+
+# show present working directory
+pwd
+
+# get help on any given command showing other arguments
+ls --help
+
+# which path to given command
+which git
+
+```
+
+### copy / paste in bash window
+
+To paste, right click on top bar of window > Edit > Paste.
+
+To copy, 
+
+### clone [esm296-4f]
+
+git clone https://github.com/ucsb-bren/esm296-4f.git
+
+
+### setup rstudio [esm296-4f]
+
+Tools > Global Options...
+
+- Git/SVN > Git executable: `C:/Program Files (x86)/Git/bin/git.exe`
+
+- R General
+    - untick: Restore .Rdata into workspace at startup
+    - Save workspace to .RData on exit: Never
+
+File > New Project...
+Version Control > Git > 
+
+https://github.com/bbest/courses.git
+
+
+## file srxr
+
+- H:/
+    - R/
+    - github/
+        - esm296-4f/ course repo
+        - courses/   personal repo
+            - esm296-4f/
+    - esm296-4f/  workspace, especially for big data files
+
+
+## github setup
+
+- invite profs: bbest, frew, lwedding?
+- create an issue
+
+## git setup
+
+[master 0c8e9e3] adding R setup
+ Committer: unknown <bbest_student@frew-test.esm.ucsb.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 17 insertions(+)
+ create mode 100644 wk01_programming/setup_r.R
+
+
+
+## mget setup
+
+[Step 8: Add MGET to your default ArcToolbox window](
+http://mgel.env.duke.edu/mget/download/#ArcToolbox)
+
+
+# Week 2
+
+## Finding out packages
+
+http://cran.r-project.org/web/views/Spatial.html
+
+
+# Other
+
+## other rec'd software
+
+- MGET 64-bit
+- Notepad ++
+
+## MGET readings
+
+- Roberts et al
