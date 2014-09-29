@@ -1,0 +1,50 @@
+---
+title: "Lab 1: Programming with ArcPy"
+author: "Ben Best"
+date: "September 29, 2014"
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+---
+
+## Goal
+
+**Task**. You've been tasked by the United Nations to assess countries with highest possible wind energy production.
+
+**Techniques**. You'll learn to manipulate data in space and time starting with an open scientific data format (netcdf). Along the way, you'll learn how to script in Python using the ArcGIS `arcpy` module for access to all the geospatial analysis functions.
+
+## Data
+
+- **NCEP Reanalysis Wind Data**
+  http://www.ncdc.noaa.gov/societal-impacts/wind
+    - spatial resolution: 2.5 x 2.5 degrees and temporal resolution daily.
+    - temporal resolution: daily
+    - file format: netcdf (*.nc)
+  
+  ![_Figure 1. Mean wind speed in USA interpolated to 0.25 x 0.25 degrees._](./img/sig995_wind_201308.gif)
+  
+- **Natural Earth | 1:10m Cultural Vectors | Admin 0 – Countries**
+  http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/
+    - spatial resolution: 1:10m
+    - version: 
+    - file format: shapefile (*.shp)
+    
+  ![_Figure 2. Natural Earth administrative boundaries._](./img/natural-earth_admin0_countries.png)
+
+## Methods
+
+### Extract Raster Layer from NetCDF
+
+
+### Calculate Speed from U and V Winds
+
+
+
+This dataset is available daily and globally at , and the gridded data is interpolated down to a 0.25 X 0.25 degree resolution to provide finer detail.
+
+The monthly mean wind speed and the monthly wind speed anomaly with respect to the 1971-2000 base period are calculated from the daily average U (east-west) and V (north-south) wind components and plotted for the contiguous United States. 
+    
+
+asdf
+

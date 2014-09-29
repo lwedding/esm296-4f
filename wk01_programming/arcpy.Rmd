@@ -25,6 +25,7 @@ output:
 
 Trying out http://www.emoji-cheat-sheet.com :zap:. Or https://octicons.github.com (see [usage](https://octicons.github.com/usage/))?
 
+- https://dl.dropboxusercontent.com/u/1250538/296-4F/bash_properties.png
 
 ## Programming with Python
 
