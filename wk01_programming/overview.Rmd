@@ -2,14 +2,19 @@
 title: "Course Overview"
 author: "Ben Best"
 date: "September 28, 2014"
-output: ioslides_presentation
+output:
+  html_document:
+    self_contained: false
+    toc: true
+#  ioslides_presentation:
+#    self_contained: false
 ---
 
 ## Learning Goals {.smaller}
 
 - technologies:
     - version control with **Git**, **GitHub**
-    -  publish web pages with **markdown**
+    - publish web pages with **markdown**
     - program in **Python**: arcpy module for ArcGIS functions; looping, variables...
     - program in **R**: open-source, cross-platform; embed chunks of R in markdown: Rmarkdown
     - publish web maps: **Leaflet javascript**, **ArcGIS Online**
@@ -18,3 +23,30 @@ output: ioslides_presentation
     - building **species distribution models**
     - assessing an **ecosystem service** (coastal protection)
   
+## Motivation: Reproducible Research {.flexbox .vcenter}
+
+![](./img/Gandrud2013_ReproducibleResearchRstudio_cover_sized.png)
+
+<footer class="source">
+Source: Gandrud, C. (2013). **Reproducible Research with R and RStudio**. Boca Raton: Chapman and Hall/CRC.
+</footer>
+
+## Why Git, Github?
+
+![](./img/why-git_phd101212s.png)
+
+<footer class="source">
+Source: http://www.phdcomics.com/comics/archive.php?comicid=1531
+</footer>
+
+## Why Python?
+
+![](./img/why_python.png)
+
+<footer class="source">
+Source: http://xkcd.com/353/
+</footer>
+
+
+
+

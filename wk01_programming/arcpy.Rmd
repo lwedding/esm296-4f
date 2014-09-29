@@ -3,7 +3,10 @@ title: "Programming in ArcGIS"
 author: "Ben Best, Jim Frew"
 date: "October 3, 2014"
 output: 
-  ioslides_presentation:
+#  ioslides_presentation:
+#    self_contained: false
+  html_document:
+    toc: true
     self_contained: false
 ---
 
@@ -77,7 +80,7 @@ To calculate:
 
 Could form criteria of thresholds.
 
-![](ftp://ftp.ncdc.noaa.gov/pub/data/cmb/wind/images/sig995_wind_201308.gif)
+![](./img/sig995_wind_201308.gif)
 
 
 ## ArcPy
@@ -231,6 +234,8 @@ y_hat = reg.predict(X[train_to:test_to:test_step])
 ```
 
 # notes from bbest_test@frew-test...
+
+- http://cran.r-project.org/web/views/Spatial.html
 
 ## git bash
 
