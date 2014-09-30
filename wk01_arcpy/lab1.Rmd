@@ -34,10 +34,35 @@ output:
 
 ## Methods
 
+Start with Model Builder.
+
 ### Extract Raster Layer from NetCDF
 
 
 ### Calculate Speed from U and V Winds
+
+
+### Resample Raster
+
+At this point export a PNG of your Model for your writeup.
+
+### Use Iterator
+
+
+### Export to Script
+
+### Python Walk Through
+
+Ok, let's start with our motivation.
+
+```python
+import antigravity
+```
+
+#### WinPython
+
+#### ArcMap Python Command Line
+
 
 
 

@@ -8,6 +8,17 @@ ESM 296-4F: Advanced Special Topics in GIS
 
 * Lisa Wedding
 
+- 10 pts * 5 labs = 50 pts (1/3)
+- final project = 100 pts (2/3)
+
+- due Wed
+- discuss Fri
+- github create issue: 
+
+- "Shambhalism" - "wave a dead chicken"
+- survey monkey: right speed? boot camp style. red/green.
+
+
 ## venue
 
 Fall 2014 (03..31 October only) on Fridays at 08:30..11:30 in Bren Hall 3035 ("the GIS lab")
@@ -66,7 +77,8 @@ Frew sez:
 
         * looping example
 
-            * sensitivity analysis (varying parameters) on wind analysis[https://dl.dropboxusercontent.com/u/1250538/263/assignment/3/HW3.html](https://dl.dropboxusercontent.com/u/1250538/263/assignment/3/HW3.html)
+            * sensitivity analysis (varying parameters) on wind analysis
+[https://dl.dropboxusercontent.com/u/1250538/263/assignment/3/HW3.html](https://dl.dropboxusercontent.com/u/1250538/263/assignment/3/HW3.html)
 
     * overview of course content
 
@@ -116,7 +128,9 @@ Frew sez:
 
                 * previously used Field Calculator for running sum
 
-            * show environment:`# show workspacearcpy.env.workspace`
+            * show environment:
+`# show workspace
+arcpy.env.workspace`
 
         * Python programming with ArcGIS (Ben)
 
