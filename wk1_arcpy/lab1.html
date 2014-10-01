@@ -62,12 +62,13 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#data">Data</a></li>
 <li><a href="#methods">Methods</a><ul>
-<li><a href="#setup-github">Setup Github</a><ul>
-<li><a href="#setup-account">Setup Account</a></li>
+<li><a href="#setup-git-github">Setup Git, Github</a><ul>
+<li><a href="#setup-github-account">Setup Github Account</a></li>
 <li><a href="#apply-for-github-educational-discount">Apply for Github Educational Discount</a></li>
-<li><a href="#clone-course-repo">Clone Course Repo</a></li>
+<li><a href="#create-courses-repo">Create Courses Repo</a></li>
+<li><a href="#clone-repositories">Clone Repositories</a></li>
+<li><a href="#file-structure">File Structure</a></li>
 </ul></li>
-<li><a href="#setup-git">Setup Git</a></li>
 <li><a href="#extract-raster-layer-from-netcdf">Extract Raster Layer from NetCDF</a></li>
 <li><a href="#calculate-speed-from-u-and-v-winds">Calculate Speed from U and V Winds</a></li>
 <li><a href="#resample-raster">Resample Raster</a></li>
@@ -77,7 +78,9 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><a href="#winpython">WinPython</a></li>
 <li><a href="#arcmap-python-command-line">ArcMap Python Command Line</a></li>
 <li><a href="#time-slider">Time Slider</a></li>
-<li><a href="#save-to-markdown">Save to Markdown</a></li>
+<li><a href="#save-report-in-markdown">Save Report in Markdown</a></li>
+<li><a href="#git-commit-and-push-changes">Git Commit and Push Changes</a></li>
+<li><a href="#github-close-issue">Github Close Issue</a></li>
 </ul></li>
 </ul>
 </div>
@@ -124,29 +127,35 @@ s = \sqrt{u^2 + v^2}
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
-<div id="setup-github" class="section level3">
-<h3>Setup Github</h3>
-<div id="setup-account" class="section level4">
-<h4>Setup Account</h4>
+<div id="setup-git-github" class="section level3">
+<h3>Setup Git, Github</h3>
+<div id="setup-github-account" class="section level4">
+<h4>Setup Github Account</h4>
+<p>You can <a href="https://help.github.com/articles/changing-your-github-username">change username later</a>.</p>
 <p>Use your email ending in *.edu (needed to get educational discount).</p>
 <pre><code>git config --global user.name YOUR_GITHUB_USER_NAME
 git config --global user.email YOUR_EDU_EMAIL   </code></pre>
-<p>You can <a href="https://help.github.com/articles/changing-your-github-username">change username later</a>.</p>
-</div>
-<div id="apply-for-github-educational-discount" class="section level4">
-<h4>Apply for Github Educational Discount</h4>
-</div>
-<div id="clone-course-repo" class="section level4">
-<h4>Clone Course Repo</h4>
-</div>
-</div>
-<div id="setup-git" class="section level3">
-<h3>Setup Git</h3>
+<p>Setup Git links:</p>
 <ul>
 <li><a href="https://github.com/NCEAS/training/blob/master/2014-oss/day-04/git_notes.md">git_notes · NCEAS/training</a></li>
 <li><a href="http://software-carpentry.org/v5/novice/ref/02-git.html">git reference</a></li>
 <li><a href="http://www.software-carpentry.org/v5/novice/git">http://www.software-carpentry.org/v5/novice/git</a></li>
 </ul>
+</div>
+<div id="apply-for-github-educational-discount" class="section level4">
+<h4>Apply for Github Educational Discount</h4>
+</div>
+<div id="create-courses-repo" class="section level4">
+<h4>Create Courses Repo</h4>
+</div>
+<div id="clone-repositories" class="section level4">
+<h4>Clone Repositories</h4>
+<p>Using the SSH clone URL, clone your repos: - <code>git@github.com:ucsb-bren/esm296-4f.git</code> - <code>git@github.com:ucsb-bren/YOUR_GITHUB_USER_NAME/courses</code></p>
+</div>
+<div id="file-structure" class="section level4">
+<h4>File Structure</h4>
+<p>-&gt; NOTES FROM DESKTOP &lt;-</p>
+</div>
 </div>
 <div id="extract-raster-layer-from-netcdf" class="section level3">
 <h3>Extract Raster Layer from NetCDF</h3>
@@ -172,6 +181,8 @@ git config --global user.email YOUR_EDU_EMAIL   </code></pre>
 <ul>
 <li><p><a href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks">https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks</a> - the mother load of scientific python computing</p></li>
 <li><p><a href="http://www.software-carpentry.org/v5/novice/python/index.html">http://www.software-carpentry.org/v5/novice/python/index.html</a></p></li>
+<li><p><strong>.py</strong> Python script extension</p></li>
+<li><p><strong>arcpy</strong> Python module with ArcGIS functionality</p></li>
 </ul>
 <p>And now using the ArcGIS module <code>arcpy</code>.</p>
 <pre class="python"><code>import arcpy
@@ -192,8 +203,8 @@ for i in xrange(1,4):
 <p>Raster Catalog code.</p>
 <pre class="python"><code></code></pre>
 </div>
-<div id="save-to-markdown" class="section level3">
-<h3>Save to Markdown</h3>
+<div id="save-report-in-markdown" class="section level3">
+<h3>Save Report in Markdown</h3>
 <p>For tips, see: <a href="https://help.github.com/articles/markdown-basics">https://help.github.com/articles/markdown-basics</a></p>
 <ul>
 <li><a href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a></li>
@@ -204,6 +215,13 @@ for i in xrange(1,4):
 <ul>
 <li><a href="https://dl.dropboxusercontent.com/u/1250538/296-4F/bash_properties.png">https://dl.dropboxusercontent.com/u/1250538/296-4F/bash_properties.png</a></li>
 </ul>
+</div>
+<div id="git-commit-and-push-changes" class="section level3">
+<h3>Git Commit and Push Changes</h3>
+</div>
+<div id="github-close-issue" class="section level3">
+<h3>Github Close Issue</h3>
+<p>Check did with commit message above.</p>
 </div>
 </div>
 <div class="footnotes">
