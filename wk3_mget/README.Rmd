@@ -1,0 +1,22 @@
+---
+title: "Untitled"
+author: "Ben Best"
+date: "October 1, 2014"
+output: 
+#  html_document
+  md_document:
+    variant: markdown_github
+csl: ../references/x_apa.csl
+bibliography: ../references/x_bibliography.bib
+---
+
+## mget setup
+
+[Step 8: Add MGET to your default ArcToolbox window](
+http://mgel.env.duke.edu/mget/download/#ArcToolbox)
+
+## MGET Readings
+
+The main paper on MGET [@roberts_marine_2010] describes the overall architecture.
+
+# References

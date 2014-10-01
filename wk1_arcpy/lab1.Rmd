@@ -71,7 +71,7 @@ git config --global user.email YOUR_EDU_EMAIL
 
 #### Clone Course Repo
 
-
+Use the SSH clone URL, ie git@github.com:ucsb-bren/esm296-4f.git.
 
 ### Setup Git
 

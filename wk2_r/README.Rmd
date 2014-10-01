@@ -20,3 +20,9 @@ We'll go over R techniques here.
 ### RMarkdown
 
 Embed chunks of code.
+
+## Finding packages
+
+http://cran.r-project.org/web/views/Spatial.html
+
+
