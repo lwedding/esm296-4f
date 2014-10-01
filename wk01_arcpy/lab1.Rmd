@@ -1,7 +1,7 @@
 ---
 title: "Lab 1: Global Wind Production with ArcPy"
-author: "Ben Best"
-date: "September 29, 2014"
+author: "Ben Best <bbest@nceas.ucsb.edu>"
+date: "October 1, 2014"
 output: 
   html_document:
     toc: true
@@ -31,8 +31,6 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
 
 [^netcdf-hdf]: Details for [NetCDF from UCAR](http://www.unidata.ucar.edu/software/netcdf/) and [HDF from NCSA](http://www.hdfgroup.org/).
 
-
-
 ## Data
 
 - **NCEP Reanalysis Wind Data**<br>
@@ -41,7 +39,7 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
     - temporal resolution: daily
     - file format: netcdf (*.nc)
   
-  ![_Figure 1. Mean wind speed in USA interpolated to 0.25 x 0.25 degrees._](./img/sig995_wind_201308.gif)
+    ![_Figure 1. Mean wind speed in USA interpolated to 0.25 x 0.25 degrees._](./img/sig995_wind_201308.gif)
   
 - **Natural Earth | 1:10m Cultural Vectors | Admin 0 – Countries**<br>
   http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/
@@ -49,7 +47,7 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
     - version: 
     - file format: shapefile (*.shp)
     
-  ![_Figure 2. Natural Earth administrative boundaries._](./img/natural-earth_admin0_countries.png)
+    ![_Figure 2. Natural Earth administrative boundaries._](./img/natural-earth_admin0_countries.png)
 
 ## Methods
 
