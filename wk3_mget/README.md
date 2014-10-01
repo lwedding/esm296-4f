@@ -11,4 +11,4 @@ The main paper on MGET (Roberts, Best, Dunn, Treml, & Halpin, 2010) describes th
 References
 ==========
 
-Roberts, J. J., Best, B. D., Dunn, D. C., Treml, E. A., & Halpin, P. N. (2010). Marine Geospatial Ecology Tools: An integrated framework for ecological geoprocessing with ArcGIS, Python, R, MATLAB, and C++. *Environmental Modelling & Software*, *In Press, Corrected Proof*. doi:[10.1016/j.envsoft.2010.03.029](http://dx.doi.org/10.1016/j.envsoft.2010.03.029)
+Roberts, J. J., Best, B. D., Dunn, D. C., Treml, E. A., & Halpin, P. N. (2010). Marine Geospatial Ecology Tools: An integrated framework for ecological geoprocessing with ArcGIS, Python, R, MATLAB, and C++. *Environmental Modelling & Software*, *25*(10), 1197–1207. doi:[10.1016/j.envsoft.2010.03.029](http://dx.doi.org/10.1016/j.envsoft.2010.03.029)
