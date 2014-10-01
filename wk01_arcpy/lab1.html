@@ -62,14 +62,22 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <ul>
 <li><a href="#goal">Goal</a></li>
 <li><a href="#data">Data</a></li>
-<li><a href="#methods">Methods</a></li>
+<li><a href="#methods">Methods</a><ul>
+<li><a href="#extract-raster-layer-from-netcdf">Extract Raster Layer from NetCDF</a></li>
+<li><a href="#calculate-speed-from-u-and-v-winds">Calculate Speed from U and V Winds</a></li>
+<li><a href="#resample-raster">Resample Raster</a></li>
+<li><a href="#use-iterator">Use Iterator</a></li>
+<li><a href="#export-to-script">Export to Script</a></li>
+<li><a href="#python-walk-through">Python Walk Through</a></li>
+<li><a href="#save-to-markdown">Save to Markdown</a></li>
+</ul></li>
 </ul>
 </div>
 
 <div id="goal" class="section level2">
 <h2>Goal</h2>
 <p><strong>Task</strong>. You’ve been tasked by the United Nations to assess countries with highest possible wind energy production.</p>
-<p><strong>Techniques</strong>. You’ll learn to manipulate data in space and time starting with an open scientific data format (netcdf). You’ll learn</p>
+<p><strong>Techniques</strong>. You’ll learn to manipulate data in space and time starting with an open scientific data format (netcdf). Along the way, you’ll learn how to script in Python using the ArcGIS <code>arcpy</code> module for access to all the geospatial analysis functions.</p>
 </div>
 <div id="data" class="section level2">
 <h2>Data</h2>
@@ -98,10 +106,40 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
-<p>.countries with the most potential for wind energy production using data available through the <a href>NCEP Wind Data</a>.</p>
+<p>Start with Model Builder.</p>
+<div id="extract-raster-layer-from-netcdf" class="section level3">
+<h3>Extract Raster Layer from NetCDF</h3>
+</div>
+<div id="calculate-speed-from-u-and-v-winds" class="section level3">
+<h3>Calculate Speed from U and V Winds</h3>
+</div>
+<div id="resample-raster" class="section level3">
+<h3>Resample Raster</h3>
+<p>At this point export a PNG of your Model for your writeup.</p>
+</div>
+<div id="use-iterator" class="section level3">
+<h3>Use Iterator</h3>
+</div>
+<div id="export-to-script" class="section level3">
+<h3>Export to Script</h3>
+</div>
+<div id="python-walk-through" class="section level3">
+<h3>Python Walk Through</h3>
+<p>Ok, let’s start with our motivation.</p>
+<pre class="python"><code>import antigravity</code></pre>
+<div id="winpython" class="section level4">
+<h4>WinPython</h4>
+</div>
+<div id="arcmap-python-command-line" class="section level4">
+<h4>ArcMap Python Command Line</h4>
+</div>
+</div>
+<div id="save-to-markdown" class="section level3">
+<h3>Save to Markdown</h3>
+<p>For tips, see: <a href="https://help.github.com/articles/markdown-basics">https://help.github.com/articles/markdown-basics</a></p>
 <p>This dataset is available daily and globally at , and the gridded data is interpolated down to a 0.25 X 0.25 degree resolution to provide finer detail.</p>
 <p>The monthly mean wind speed and the monthly wind speed anomaly with respect to the 1971-2000 base period are calculated from the daily average U (east-west) and V (north-south) wind components and plotted for the contiguous United States.</p>
-<p>asdf</p>
+</div>
 </div>
 
 

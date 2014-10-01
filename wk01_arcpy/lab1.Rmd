@@ -65,11 +65,15 @@ import antigravity
 
 
 
+### Save to Markdown
+
+For tips, see: https://help.github.com/articles/markdown-basics
+
 
 This dataset is available daily and globally at , and the gridded data is interpolated down to a 0.25 X 0.25 degree resolution to provide finer detail.
 
 The monthly mean wind speed and the monthly wind speed anomaly with respect to the 1971-2000 base period are calculated from the daily average U (east-west) and V (north-south) wind components and plotted for the contiguous United States. 
     
 
-asdf
+
 
