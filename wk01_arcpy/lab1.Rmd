@@ -31,7 +31,7 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
 
 [^netcdf-hdf]: Details for [NetCDF from UCAR](http://www.unidata.ucar.edu/software/netcdf/) and [HDF from NCSA](http://www.hdfgroup.org/).
 
-Finally, you'll be using the best of breed scientific programming tools to keep track changes in the files you create (with **git**) and publish a report to a developer centric online project management interface (**Github**). You'll make this report in a language ('**markdown**) that easily converts to an html web page (and other formats).
+Finally, you'll be using the best of breed scientific programming tools to keep track changes in the files you create (**git**) and publish a report to a developer centric online project management interface (**Github**). You'll make this report in a language (**markdown**) that easily converts to an html web page (and other formats).
 
 ## Data
 
