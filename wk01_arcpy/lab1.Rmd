@@ -16,7 +16,7 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
 
 - **Time**. Rather than being provided average wind production throughout the year, you're provided with daily wind data for a given year. The task then is to work out an annual average. This introduces analysis in time and necessitates a looping strategy. We'll show you how to do this in Model Builder with Iterators and programmatically in Python. You'll learn only the cursory basics in Python for now to complete the task. You'll then create a Script Tool to easily perform the same analysis for any year of data. You'll also learn how to visualize geographic elements temporally using the Time Slider and even outputting a video.
 
-- **Polar Coordinates**. Rather than simply given the wind speed, you are provided wind speed in the horizontal ($u$) and vertical ($v$) direction. These vectors in a "polar coordinate system" can be translated into the "Cartesian coordinate system" giving us the speed ($s$) using good ol' Pythagorean theorem [^polar]:
+- **Polar Coordinates**. Rather than simply being given the wind speed, you are provided wind speed in the horizontal ($u$) and vertical ($v$) direction. These vectors in a "polar coordinate system" can be translated into the "Cartesian coordinate system" giving us the speed ($s$) using good ol' Pythagorean theorem [^polar]:
 
     $$
     s = \sqrt{u^2 + v^2}
@@ -30,6 +30,8 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
     <!-- source: https://docs.google.com/a/nceas.ucsb.edu/drawings/d/1K1ruRAgXhz6A8IgzgD4eXgXZTHakQZ75oF3rWZK1Wv8/edit -->
 
 [^netcdf-hdf]: Details for [NetCDF from UCAR](http://www.unidata.ucar.edu/software/netcdf/) and [HDF from NCSA](http://www.hdfgroup.org/).
+
+Finally, you'll be using the best of breed scientific programming tools to keep track changes in the files you create (with **git**) and publish a report to a developer centric online project management interface (**Github**). You'll make this report in a language ('**markdown**) that easily converts to an html web page (and other formats).
 
 ## Data
 
