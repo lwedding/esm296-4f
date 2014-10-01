@@ -5,31 +5,9 @@ date: "September 24, 2014"
 output: html_document
 ---
 
-## R Markdown
+Welcome to the first week of class!
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+You'll want to use these links to view the course materials:
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Motivation for Github
-
-![](img/why-git_phd101212s.png)
-
-## Launching ArcPy
-
-Get a command line going...
-
-```python
-import arcpy
-
-# get loopy
-for i in xrange(1,4):
-  arcpy.RasterCoolio(i)
-```
-
-## Lab
-
-In progress...
-
-- http://www.ncdc.noaa.gov/data-access/land-based-station-data
-- 
+- [Lab 1: Global Wind Production with ArcPy](https://rawgit.com/ucsb-bren/esm296-4f/master/wk01_arcpy/lab1.html)
+- ...
