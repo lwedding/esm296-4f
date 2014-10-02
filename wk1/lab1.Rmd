@@ -21,9 +21,9 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
 
 - **Polar Coordinates**. Rather than simply being given the wind speed, you are provided wind speed in the horizontal ($u$) and vertical ($v$) direction. These vectors in a "polar coordinate system" can be translated into the "Cartesian coordinate system" giving us the speed ($s$) using good ol' Pythagorean theorem [^polar]:
 
-    $$
-    s = \sqrt{u^2 + v^2}
-    $$
+  $$
+  s = \sqrt{u^2 + v^2}
+  $$
   
 [^polar]: For details on conversion betwen coordinate systems, see [Wikipedia: Polar coordinate system - Converting between polar and Cartesian coordinates](http://en.wikipedia.org/wiki/Polar_coordinate_system#Converting_between_polar_and_Cartesian_coordinates). Note that the [geographic coordinate system](http://en.wikipedia.org/wiki/Geographic_coordinate_system) and [projected coordinate systems](http://en.wikipedia.org/wiki/Map_projection) are for measuring locations and not angle & magnitude like the polar / Cartesian coordinate systems here.
 
@@ -56,16 +56,60 @@ Finally, you'll be using the best of breed scientific programming tools to track
 
 # Methods
 
+## Download Data
+
+You can use the URLs above to download the data or just download the 7-zipped file:
+
+https://purl.org/net/frew/ESM296/wk1/raw.7z
+
+I recommend placing this in `H:\esm296-4f\lab1`, right clicking 7-Zip > Extract here.
+
+## Prep Workspace
+
+Fire up ArcMap and create in the Catalog pane:
+
+- a new blank map, save it in `H:\esm296-4f\lab1` as `lab1.mxd`.
+- new file geodatabase as `lab1.gdb`
+- new toolbox as `lab1.tbx`
+- new folder `out`
+
+Right click on lab1.gdb to Make Default Geodatabase.
+
+You'll need to have the Spatial Analyst extension ticked on (ArcMap menu Customize > Extensions)
 
 ## Extract Raster Layer from NetCDF
 
+Create a new Model within lab1.tbx and Edit it. Set Model > Model Properties to "Store relative path names" and give it a name and label of "uv_nc_to_s_tif".
+
+Now add the [Make NetCDF Raster Layer](http://resources.arcgis.com/en/help/main/10.2/index.html#//004300000006000000) tool navigate to the input file `raw/uwnd.sig995.2013.nc` (note: `u` and `2013`) with further parameters like so:
+
+![](img/arc_make-netcdf-raster-layer_params.png)
+
+Notice the output is `in_memory/u_001`. That's not a folder. That's the [`in_memory` workspace](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000005s000000) so the interim output is not written to disk, but simply kept in memory for your session.
+
+Run this tool to see the output in ArcMap. You might need to right-click on the output  Add To Display.
+
+Repeat for the `v` and `2013` file, swapping out instances of `u` for `v`.
 
 ## Calculate Speed from U and V Winds
 
+Now we're ready to calculate the speed $s$ given vectors $u$ and $v$ using the [Raster Calculator](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z000000z7000000). Apply the equation
+
+  $$
+  s = \sqrt{u^2 + v^2}
+  $$
+
+by entering the following parameters, choosing the variables (green triangle) and not layers (yellow diamond).
+
+  ![](img/arc_raster-calculator_params.png)
+
+Again we'll use the `in_memory` output trick since this isn't quite the final result we want.
 
 ## Resample Raster
 
-At this point export a PNG of your Model for your writeup.
+If you add a global basemap (File > Add Data > Add Basemap...) and make just `s_001` visible with some transparency, you'll notice that this is much chunkier than Figure 1 above since that was resampled at 0.25 x 0.25 degrees from the original global 2.5 x 2.5 degrees raster. Let's do the same with the [Resample](http://resources.arcgis.com/en/help/main/10.2/index.html#//00170000009t000000) function and output to `H:\esm296-4f\lab1\out\s_001.tif`.
+
+At this point export a PNG of your Model for later writeup (Model > Export > To Graphic...) into `H:\github\courses\esm296-4f\lab1\img\uv_nc_to_s_tif.png`.
 
 ## Use Iterator in Model Builder
 
