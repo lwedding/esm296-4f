@@ -1,6 +1,6 @@
 ---
 title: "Lab 1: Global Wind Production with ArcPy"
-author: "Ben Best <bbest@nceas.ucsb.edu>"
+author: "Ben Best"
 date: "October 1, 2014"
 output: 
   html_document:

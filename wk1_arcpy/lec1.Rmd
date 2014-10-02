@@ -3,11 +3,11 @@ title: "Course Overview"
 author: "Ben Best"
 date: "September 28, 2014"
 output:
-  html_document:
-    toc: true
+#  html_document:
+#    toc: true
 #    self_contained: false   
-#  ioslides_presentation:
-#    self_contained: false
+  ioslides_presentation:
+    self_contained: true
 ---
 
 
@@ -25,6 +25,7 @@ output:
     - building **species distribution models**
     - assessing an **ecosystem service** (coastal protection)
   
+# Motivation
 
 ## Why Git?
 
@@ -63,3 +64,12 @@ Source: Gandrud, C. (2013). **Reproducible Research with R and RStudio**. Boca R
 <div class='notes'>
 Originally R was developed by Bell Labs for exploratory data analysis. Now it can be used "soup to nuts" for reproducible science.
 </div>
+
+# Specifics
+
+## Github Flow
+
+![](img/github_flow.png)
+
+- ucsb-bren/esm296-4f: pull only (no push privileges)
+- USER/courses: push and pull
