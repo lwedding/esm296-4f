@@ -85,8 +85,6 @@ Now add the [Make NetCDF Raster Layer](http://resources.arcgis.com/en/help/main/
 
 ![](img/arc_make-netcdf-raster-layer_params.png)
 
-Notice the output is `in_memory/u_001`. That's not a folder. That's the [`in_memory` workspace](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000005s000000) so the interim output is not written to disk, but simply kept in memory for your session.
-
 Run this tool to see the output in ArcMap. You might need to right-click on the output  Add To Display.
 
 Repeat for the `v` and `2013` file, swapping out instances of `u` for `v`.
@@ -103,20 +101,56 @@ by entering the following parameters, choosing the variables (green triangle) an
 
   ![](img/arc_raster-calculator_params.png)
 
-Again we'll use the `in_memory` output trick since this isn't quite the final result we want.
+Notice the output is `in_memory\s_001` since we're not quite to the final product so don't need to write to disk just yet. This uses the [`in_memory` workspace](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000005s000000) so the interim output is not written to disk, but simply kept in memory for your session, like a layer.
+
 
 ## Resample Raster
 
-If you add a global basemap (File > Add Data > Add Basemap...) and make just `s_001` visible with some transparency, you'll notice that this is much chunkier than Figure 1 above since that was resampled at 0.25 x 0.25 degrees from the original global 2.5 x 2.5 degrees raster. Let's do the same with the [Resample](http://resources.arcgis.com/en/help/main/10.2/index.html#//00170000009t000000) function and output to `H:\esm296-4f\lab1\out\s_001.tif`.
+If you add a global basemap (File > Add Data > Add Basemap...) and make just `s_001` visible with some transparency, you'll notice that this is much chunkier than Figure 1 above since that was resampled at 0.25 x 0.25 degrees from the original global 2.5 x 2.5 degrees raster. Let's do the same with the [Resample](http://resources.arcgis.com/en/help/main/10.2/index.html#//00170000009t000000) function using BILINEAR interpolation and output to `H:\esm296-4f\lab1\out\s_001.tif`.
 
 At this point export a PNG of your Model for later writeup (Model > Export > To Graphic...) into `H:\github\courses\esm296-4f\lab1\img\uv_nc_to_s_tif.png`.
 
 ## Use Iterator in Model Builder
 
+Ok, so we've got a decent product, but that's only the first time index. And there's 365, one for each day of the year. So let's to get loopy!
+
+This really should motivate you to create script, but you might as well also know about [iterators in ModelBuilder](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000001w000000). Iterating through all 365 days is overkill for our purposes. Let's just loop over one day per month.
+
+To start, create another model with Save as... `uv_nc_to_s_tif_for_loop`. Add the For iterator by right clicking on empty part of the ModelBuilder canvas > Iterators, and parameterize like so:
+
+- From Value: 1
+- To Value: 365
+- By Value: 29
+
+Rename the default "value" output to "j" for [julian day](http://en.wikipedia.org/wiki/Julian_day), ie index day of the year. Be careful not to use "i" or "n" which are reserved variables for [ArcGIS inline variable substitution](http://resources.arcgis.com/en/help/main/10.2/index.html#/A_quick_tour_of_using_inline_variable_substitution/002w0000001t000000/). You should see this in your model:
+
+  ![](img/arc-mb_for-j.png)
+
+We can then use this variable in the parameters of the other tools by wrapping it with `%` (an old MS-DOS convention).
+
+  ![](img/arc-mb_make-netcdf-raster-layer_params-for-variable-j.png)
+
+Continue swapping out all instances of `1` or `001` with `%j%` in the function parameters. The working equation for the Raster Calculator is:
+
+```
+SquareRoot( Square("u_%j%") + Square("v_%j%") )
+```
+
+The link from the u and v input to Raster Calculator gets lost, so you'll need to link `u_%j%` and `v_%j%` to the Raster Calculator as a "precondition" so these get generated first and are available to the Raster Calculator.
+
 
 ## Export to Script
 
-Get a command line going...
+While it gets the job mostly done, there are a few reasons I don't like the above approach:
+
+- The %j% substitution gets squirrely like in Raster Calculator above.
+- The outputs don't sort well since they're not zero padded like s_001.tif
+- The julian day or index number makes it hard to tell which month it should refer to and it won't be the middle of the month exactly.
+
+This all leads us to doing it right in a Python script. A great way to get started is editing the first model uv_nc_to_s_tif, menu Model > Export > To Python Script... and save to `H:\github\courses\esm296-4f\lab1\uv_nc_to_s_tif.py`.
+
+
+...Get a command line going...
 
 
 ## Python
