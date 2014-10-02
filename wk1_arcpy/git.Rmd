@@ -55,7 +55,7 @@ git clone https://github.com/ucsb-bren/esm296-4f.git
 
 Tools > Global Options...
 
-- Git/SVN > Git executable: `C:/Program Files (x86)/Git/bin/git.exe`
+- Git/SVN > Git executable: Browse... and paste `C:\Program Files (x86)\Git\bin\git.exe`
 
 - R General
     - untick: Restore .Rdata into workspace at startup
