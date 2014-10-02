@@ -67,9 +67,42 @@ Originally R was developed by Bell Labs for exploratory data analysis. Now it ca
 
 # Specifics
 
-## Github Flow
+## Git / Github Flow
 
 ![](img/github_flow.png)
 
+Division of labor:
+
+- git performs these actions
+- github stores repositories online
+
+Permissions:
+
 - ucsb-bren/esm296-4f: pull only (no push privileges)
 - USER/courses: push and pull
+
+## Git / Github Features
+
+GOOD:
+
+- **text** formats (txt, r, py, md...)
+- **backup** to offsite archive, and **rewind** changes
+- **document** changes of code and files with issues and messages
+- **collaborate** with others and **publish** to web site
+
+BAD:
+
+- **binary** formats (eg docx, pdf, shp...)
+- **big** files (limits: 1GB per repository, 100MB per file)
+
+
+## Folder Structure
+
+So your local file structure will look like this:
+
+H:/
+
+- **github/esm296-4f**: read-only course repo
+- **github/courses/esm296-4f**: read-write personal courses repo containing esm296-4f folder
+- **esm296-4f/**: personal workspace for working through labs and everything else, especially for big data files
+

@@ -7,10 +7,11 @@ output:
     toc: true
     toc_depth: 4
     fig_caption: true
+    number_sections: true
     self_contained: true
 ---
 
-## Introduction
+# Introduction
 
 **Goal**. You've been tasked by the United Nations to assess countries with highest possible wind energy production.
 
@@ -35,7 +36,7 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
 
 Finally, you'll be using the best of breed scientific programming tools to track changes in the files you create (**git**) and publish an executive summary report to an online project management interface (**Github**). You'll make this report in a language (**markdown**) that easily converts to an html web page (and other formats).
 
-## Data
+# Data
 
 - **NCEP Reanalysis Wind Data**<br>
   http://www.ncdc.noaa.gov/societal-impacts/wind
@@ -53,62 +54,28 @@ Finally, you'll be using the best of breed scientific programming tools to track
     
     ![_Figure 2. Natural Earth administrative boundaries._](./img/natural-earth_admin0_countries.png)
 
-## Methods
-
-### Setup Git, Github
-
-#### Setup Github Account
-
-You can [change username later](https://help.github.com/articles/changing-your-github-username).
-
-Use your email ending in *.edu (needed to get educational discount).
-
-```
-git config --global user.name YOUR_GITHUB_USER_NAME
-git config --global user.email YOUR_EDU_EMAIL   
-```
-
-Setup Git links:
-
-- [git_notes · NCEAS/training](https://github.com/NCEAS/training/blob/master/2014-oss/day-04/git_notes.md)
-- [git reference](http://software-carpentry.org/v5/novice/ref/02-git.html)
-- http://www.software-carpentry.org/v5/novice/git
-
-#### Apply for Github Educational Discount
+# Methods
 
 
-#### Create Courses Repo
+## Extract Raster Layer from NetCDF
 
 
-#### Clone Repositories
-
-Using the SSH clone URL, clone your repos:
-- `git@github.com:ucsb-bren/esm296-4f.git`
-- `git@github.com:ucsb-bren/YOUR_GITHUB_USER_NAME/courses`
-
-#### File Structure
-
--> NOTES FROM DESKTOP <- 
-
-### Extract Raster Layer from NetCDF
+## Calculate Speed from U and V Winds
 
 
-### Calculate Speed from U and V Winds
-
-
-### Resample Raster
+## Resample Raster
 
 At this point export a PNG of your Model for your writeup.
 
-### Use Iterator in Model Builder
+## Use Iterator in Model Builder
 
 
-### Export to Script
+## Export to Script
 
 Get a command line going...
 
 
-### Python
+## Python
 
 Ok, let's start with our motivation.
 
@@ -136,11 +103,11 @@ for i in xrange(1,4):
 
 python scripts execute on the command line.
 
-### WinPython
+## WinPython
 
-### ArcMap Python Command Line
+## ArcMap Python Command Line
 
-### Time Slider
+## Time Slider
 
 Raster Catalog code.
 
@@ -148,7 +115,7 @@ Raster Catalog code.
 
 ```
 
-### Save Report in Markdown
+## Save Report in Markdown
 
 For tips, see: https://help.github.com/articles/markdown-basics
 
@@ -160,10 +127,10 @@ Trying out http://www.emoji-cheat-sheet.com :zap:. Or https://octicons.github.co
 
 - https://dl.dropboxusercontent.com/u/1250538/296-4F/bash_properties.png
 
-### Git Commit and Push Changes
+## Git Commit and Push Changes
 
 
 
-### Github Close Issue
+## Github Close Issue
 
 Check did with commit message above.
