@@ -10,12 +10,19 @@ output:
 
 ## git bash
 
+Go to Windows button and start typing "Git Bash" (and enter) to launch program.
 
 ### Setup name and password
 
 ```bash
 git config --global user.name "Ben Best"
 git config --global user.email bbest@nceas.ucsb.edu
+```
+
+You can see what variables are already set with:
+
+```bash
+git config --global user.name "Ben Best"
 ```
 
 ### navigating 
