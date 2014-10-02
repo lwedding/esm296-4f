@@ -1,11 +1,8 @@
----
-title: "R"
-author: "Ben Best"
-date: "September 30, 2014"
-output: html_document
----
+We'll go over open source R and Python techniques here.
 
-We'll go over R techniques here.
+You'll want to use these links to view the course materials:
+
+- [Lec 2](https://rawgit.com/ucsb-bren/esm296-4f/master/wk2_r/lec2.html)
 
 ### RStudio
 
