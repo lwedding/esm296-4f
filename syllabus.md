@@ -32,6 +32,7 @@ The **final group project** is **100 points total** and a Project Proposal is du
 
 * **Lecture 1**:
     * Course Intro - Weekly lab topics, final project & grading
+        * slides ([PDF](https://purl.org/net/frew/ESM296/course_intro_slides.pdf))
     * Introduction to Programming in ArcGIS
         * ArcGIS Model Builder - > Python
     * Intro to Github
