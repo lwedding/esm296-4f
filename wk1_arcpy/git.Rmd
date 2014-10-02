@@ -19,10 +19,10 @@ git config --global user.name "Ben Best"
 git config --global user.email bbest@nceas.ucsb.edu
 ```
 
-You can see what variables are already set with:
+You can confirm that these variables are properly set:
 
 ```bash
-git config --global user.name "Ben Best"
+git config --global --list
 ```
 
 ### navigating 
