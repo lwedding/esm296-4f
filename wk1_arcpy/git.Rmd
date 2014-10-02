@@ -1,8 +1,10 @@
 ---
 title: "Git, Github"
 author: "Ben Best"
-date: "September 30, 2014"
-output: html_document
+date: "October 1, 2014"
+output: 
+  html_document:
+    toc: true
 ---
 
 

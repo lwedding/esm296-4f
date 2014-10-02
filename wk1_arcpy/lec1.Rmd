@@ -4,8 +4,8 @@ author: "Ben Best"
 date: "September 28, 2014"
 output:
   html_document:
-    self_contained: false
     toc: true
+#    self_contained: false   
 #  ioslides_presentation:
 #    self_contained: false
 ---
