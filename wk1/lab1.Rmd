@@ -105,6 +105,9 @@ python scripts execute on the command line.
 
 ## WinPython
 
+- block indents
+- check syntax, running man
+
 ## ArcMap Python Command Line
 
 ## Time Slider
