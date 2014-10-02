@@ -126,10 +126,9 @@ git status
 # go ahead and push those changes
 # git will prompt you for your Github username and password and remember it for future
 git push
-
-# now that you've pushed the changes to github, 
-# check out https://github.com/USER/courses/issues/1
 ```
+
+Now that you've pushed the changes to github, visit your courses repo online and you should see that issue #1 got automatically closed. For more, check out [Mastering Issues](https://guides.github.com/features/issues/).
 
 OK, now you have two way pull and push capability with your Github courses repository. Wouldn't it be nice though to not have to use the command line every time you add a file?
 
