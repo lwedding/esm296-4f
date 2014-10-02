@@ -1,14 +1,22 @@
 # ESM 296-4F<br>Advanced Special Topics in GIS (2 units)
 
+nice short link to this document: <https://tinyurl.com/ESM296>
+
 ## Venue
 
-Fridays, 03&ndash;31 October 2014 (5 weeks), at 08:30&ndash;11:30, in Bren Hall 3035 ("the GIS Lab")
+Fridays, 03&ndash;31 October 2014 (5 weeks), at 08:30&ndash;11:30, in Bren 3035 ("the GIS Lab")
 
 ## Instructors
 
-* Ben Best <bbest@nceas.ucsb.edu>
-* James Frew <frew@ucsb.edu>
-* Lisa Wedding <lwedding@stanford.edu>
+* Ben Best
+    * <bbest@nceas.ucsb.edu>
+    * office hours: after class, 15:00–17:00, in Bren 4324
+* [James Frew](http://frew.eri.ucsb.edu/)
+    * <frew@ucsb.edu>
+    * office hours: [by appointment](mailto:frew@ucsb.edu?subject=ESM 296 appt), or drop by Bren 4524
+* [Lisa Wedding](http://www.centerforoceansolutions.org/people/early-career-fellows/lisa-wedding)
+    * <lwedding@stanford.edu>
+    * office hours: after class, 13:00–15:00, in Bren 4324
 
 ## Course Description
 
