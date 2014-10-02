@@ -1,0 +1,62 @@
+---
+title: "Final Project Overview"
+author: "Ben Best"
+date: "October 1, 2014"
+output: 
+  md_document:
+    variant: markdown_github
+#  html_document
+---
+
+## Final Project: Species - GBIF
+
+Get species data from GBIF, eg [Humpback whale](http://www.gbif.org/species/5220086).
+
+![](./img/gbif_humpback_whale.png)
+
+
+## Final Project: Species - rgbif
+
+<div class="notes">
+```r
+# install.packages(c('rgdal','rgeos'), repos='http://www.stats.ox.ac.uk/pub/RWin')
+# devtools::install_github('ropensci/rgbif')
+```
+</div>
+
+```{r rgbif}
+suppressPackageStartupMessages(library(rgbif))
+key = name_lookup(query='Humpback whale', rank='species')$data$nubKey[1] # 5220086
+dat = occ_search(taxonKey=key, return='data', limit=200)
+gbifmap(input=dat)
+```
+
+See: [rgbif tutorial](http://ropensci.org/tutorials/rgbif_tutorial.html)
+
+## Final Project: Species - env data {.smaller}
+
+[raster::getData](http://www.inside-r.org/packages/cran/raster/docs/getData) - get geographic data for anywhere in the world
+
+  'alt' stands for altitude (elevation); the data were aggregated from SRTM 90 m resolution data between -60 and 60 latitude. 'GADM' is a database of global administrative boundaries. 'worldclim' is a database of global interpolated climate data. 'SRTM' refers to the hole-filled CGIAR-SRTM (90 m resolution). 'countries' has polygons for all countries at a higher resolution than the 'wrld_simpl' data in the maptools pacakge .
+
+Terrestrial:
+
+- [CGIAR-CSI SRTM 90m DEM Digital Elevation Database](http://srtm.csi.cgiar.org/)
+
+Marine:
+
+Either:
+
+- http://topex.ucsd.edu/WWW_html/srtm30_plus.html
+- http://nationalmap.gov/viewer.html
+- http://www.cirgis.org/data.html
+## Final Project: Ecosystem
+
+InVEST documentation, which one?:
+
+- [Wave Attenuation & Erosion Reduction: Coastal Protection](http://ncp-dev.stanford.edu/~dataportal/invest-releases/documentation/current_release/coastal_protection.html)
+- [Coastal Vulnerability Model](http://ncp-dev.stanford.edu/~dataportal/invest-releases/documentation/current_release/coastal_vulnerability.html)
+
+Rec'd Reading:
+
+- Guerry, A. D., Ruckelshaus, M. H., Arkema, K. K., Bernhardt, J. R., Guannel, G., Kim, C.-K., … Spencer, J. (2012). **Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning**. _International Journal of Biodiversity Science, Ecosystem Services & Management_, 1–15. [doi:10.1080/21513732.2011.647835](http://dx.doi.org/10.1080/21513732.2011.647835)

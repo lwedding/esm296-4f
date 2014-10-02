@@ -1,0 +1,28 @@
+---
+title: "R"
+author: "Ben Best"
+date: "September 30, 2014"
+output: html_document
+---
+
+We'll go over R techniques here.
+
+### RStudio
+
+[TODO: layout images, panes described]
+
+- Console
+
+```r
+2 + 2
+```
+
+### RMarkdown
+
+Embed chunks of code.
+
+## Finding packages
+
+http://cran.r-project.org/web/views/Spatial.html
+
+

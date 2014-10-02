@@ -1,0 +1,65 @@
+---
+title: "Course Overview"
+author: "Ben Best"
+date: "September 28, 2014"
+output:
+  html_document:
+    toc: true
+#    self_contained: false   
+#  ioslides_presentation:
+#    self_contained: false
+---
+
+
+## Learning Goals {.smaller}
+
+- technologies:
+    - version control using **Git**
+    - project manage at **Github**
+    - publish web pages in **markdown**
+    - program in **Python**: arcpy module for ArcGIS functions; looping, variables...
+    - program in **R**: open-source, cross-platform; embed chunks of R in markdown: Rmarkdown
+    - publish web maps: **Leaflet javascript**, **ArcGIS Online**
+- conservation analysis:
+    - **siting wind farms**
+    - building **species distribution models**
+    - assessing an **ecosystem service** (coastal protection)
+  
+
+## Why Git?
+
+![](./img/why-git_phd101212s.png)
+
+<footer class="source">
+Source: http://www.phdcomics.com/comics/archive.php?comicid=1531
+</footer>
+
+<div class='notes'>
+Git is the versioning engine.
+</div>
+
+
+## Why Python?
+
+![](./img/why_python.png)
+
+<footer class="source">
+Source: http://xkcd.com/353/
+</footer>
+
+<div class='notes'>
+Python was developed by Guido Von Rossum, the "benevelont dictator" and fan of Monty Python. All core packages and improvements are blessed by Guido, and conforms to a consistent way of thinking, aka the "pythonic" way (vs Perl / Java / R which have many packages doing similar things). It is said to have "batteries included", hence at its core has what you need.
+</div>
+
+
+## Why R? {.flexbox .vcenter}
+
+![](./img/Gandrud2013_ReproducibleResearchRstudio_cover_sized.png)
+
+<footer class="source">
+Source: Gandrud, C. (2013). **Reproducible Research with R and RStudio**. Boca Raton: Chapman and Hall/CRC.
+</footer>
+
+<div class='notes'>
+Originally R was developed by Bell Labs for exploratory data analysis. Now it can be used "soup to nuts" for reproducible science.
+</div>
