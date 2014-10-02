@@ -1,8 +1,8 @@
-# ESM 296-4F: Advanced Special Topics in GIS (2 units)
+# ESM 296-4F<br>Advanced Special Topics in GIS (2 units)
 
 ## Venue
 
-Fridays, 03--31 October 2014 (5 weeks), at 08:30--11:30, in Bren Hall 3035 ("the GIS Lab")
+Fridays, 03&ndash;31 October 2014 (5 weeks), at 08:30&ndash;11:30, in Bren Hall 3035 ("the GIS Lab")
 
 ## Instructors
 
