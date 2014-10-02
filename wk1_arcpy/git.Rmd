@@ -12,7 +12,7 @@ output:
 
 Go to Windows button and start typing "Git Bash" (and enter) to launch program.
 
-### Setup name and password
+### Setup Git user
 
 ```bash
 git config --global user.name "Ben Best"
@@ -25,26 +25,28 @@ You can confirm that these variables are properly set:
 git config --global --list
 ```
 
-### navigating 
+### navigating Git bash
 
 Comments preceeded with `#`.
 
 ```bash
-# change directory to home
-cd ~
-
 # list files and folders
 ls
 
 # show present working directory
 pwd
 
-# get help on any given command showing other arguments
-ls --help
+# make directory to store your github repositories
+mkdir github
 
-# which path to given command
-which git
+# change directory to github
+cd github
 
+# clone the class repository
+git clone git@github.com:ucsb-bren/esm296-4f.git
+
+# change directory back to home, ie H: drive
+cd ~
 ```
 
 ### copy / paste in bash window
@@ -55,8 +57,9 @@ To copy,
 
 ### clone [esm296-4f]
 
-git clone https://github.com/ucsb-bren/esm296-4f.git
+git clone https://github.com/ucsb-bren/esm296-4f
 
+git@github.com:bbest/courses.git
 
 ### setup rstudio [esm296-4f]
 
