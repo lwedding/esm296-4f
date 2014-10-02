@@ -66,7 +66,7 @@ Usually only takes a couple days to grant you the [Micro plan](https://github.co
 
 ## Create a New Issue
 
-Navigate to your courses repository at `http://github.com/USER/courses`. Go to !Issues (available in the right hand navigation). Create a New Issue with the title "try commit" and submit. You should get your first issue #1. We'll see how we can reference this number in a commit message soon. You can similarly create [issues in the esm296-4f course repository](https://github.com/ucsb-bren/esm296-4f/issues) for us to address any bugs with the labs.
+Navigate to your courses repository at `http://github.com/USER/courses`. Go to !Issues (available in the right hand navigation). Create a New Issue with the title "try commit" and submit. You should get your first issue #1. We'll see how we can reference this number in a commit message soon. You can similarly create [issues in the esm296-4f repository](https://github.com/ucsb-bren/esm296-4f/issues) for us to address any bugs with the labs.
 
   ![](img/github_new-issue-created.png)
 
