@@ -140,7 +140,7 @@ Notice the output is `in_memory\s_001` since we're not quite to the final produc
 
 ## Resample Raster
 
-If you add a global basemap (File > Add Data > Add Basemap...) and make just `s_001` visible with some transparency, you'll notice that this is much chunkier than Figure 1 above since that was resampled at 0.25 x 0.25 degrees from the original global 2.5 x 2.5 degrees raster. Let's do the same with the [Resample](http://resources.arcgis.com/en/help/main/10.2/index.html#//00170000009t000000) function using BILINEAR interpolation and output to `H:\esm296-4f\lab1\out\s_001.tif`.
+If you add a global basemap (File > Add Data > Add Basemap...) and make just `s_001` visible with some transparency, you'll notice that this is much chunkier than Figure 1 above since that was resampled at 0.25 x 0.25 degrees from the original global 2.5 x 2.5 degrees raster. Let's [Resample](http://resources.arcgis.com/en/help/main/10.2/index.html#//00170000009t000000) at 0.25 x 0.25 resolution using BILINEAR interpolation and output to `H:\esm296-4f\lab1\out\s_001.tif`.
 
 At this point export a PNG of your Model for later writeup (Model > Export > To Graphic...) into `H:\github\courses\esm296-4f\lab1\img\uv_nc_to_s_tif.png`.
 
