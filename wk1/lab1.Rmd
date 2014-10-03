@@ -154,7 +154,7 @@ To start, create another model with Save as... `uv_nc_to_s_tif_for_loop`. Add th
 
 - From Value: 1
 - To Value: 365
-- By Value: 29
+- By Value: 30
 
 Rename the default "value" output to "j" for [julian day](http://en.wikipedia.org/wiki/Julian_day), ie index day of the year. Be careful not to use "i" or "n" which are reserved variables for [ArcGIS inline variable substitution](http://resources.arcgis.com/en/help/main/10.2/index.html#/A_quick_tour_of_using_inline_variable_substitution/002w0000001t000000/). You should see this in your model:
 
