@@ -94,5 +94,8 @@ For the final group project assignment, you will submit a written report based o
 
 * **Ecosystem service evaluation**
     * Pick an ecosystem service. See InVEST manual: recommend only Coastal Vulnerability model for California counties / area of interest.
+    
 * **Species distribution modeling**
     * Pick a species, identify observations available through GBIF (map of locations for the chosen spp).
+
+For more details on submitting your project proposal, see [project/README.md](project/README.md)

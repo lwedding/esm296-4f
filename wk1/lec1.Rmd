@@ -90,7 +90,7 @@ Division of labor:
 - git performs these actions
 - github stores repositories online
 
-<br>
+Other: **BRANCH**, **FORK**
 
 Permissions:
 

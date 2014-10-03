@@ -413,6 +413,10 @@ The top 3 countries by MEAN wind speed were:
 1. [Country E]
 1. [Country F]
 
+## Python Script
+
+[uv_nc_to_s_tif.py](uv_nc_to_s_tif.py)
+
 ```
 
 Github automatically renders this markdown, but you can also Preview HTML in RStudio. When you commit it, use the message `closes #2` to flag your lab done. Yay!
@@ -462,8 +466,37 @@ You'll need to [enable time](http://resources.arcgis.com/en/help/main/10.2/index
 
 ![](img/arcmap_time-aware-layer.png)
 
+## EXTRA: Create a Script Tool
+
+We started off in Model Builder and exported to a Python script. You can further take a python script and turn it into a Script Tool to use back in Model Builder or on its own.
+
+![](img/script-tool_catalog.png)
+
+Here's a snippet of code to setup input arguments:
+
+```python
+import sys
+
+u_nc = sys.argv[1] # "H:\\esm296-4f\\lab1\\raw\\uwnd.sig995.2013.nc"
+v_nc = sys.argv[2] # "H:\\esm296-4f\\lab1\\raw\\vwnd.sig995.2013.nc"
+yr   = sys.argv[3] # 2013
+```
+
+In concept, we could make this script tool take input arguments like above for a different year's worth of data and apply the same analysis. This would require a fair amount of recoding so too much for this lab, but worth sharing the idea.
+
+
+![](img/script-tool_params.png)
+
+Here's more on creating Script Tools:
+
+* [ArcGIS Help 10.2 - A quick tour of creating tools with Python](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000002q000000)
+* [ArcGIS Help 10.2 - What is a script tool?](http://resources.arcgis.com/en/help/main/10.2/index.html#//001500000006000000)
+* [ArcGIS Help 10.2 - Adding a script tool](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000001r000000)
+* [ArcGIS Help 10.2 - Setting script tool parameters](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000n000000)
+* [ArcGIS Help 10.2 - Debugging script tools](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000m000000)
 
 ## More on Python
 
+* [ArcGIS Help 10.2 - Writing Python scripts](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000021000000)
 - [Software Carpentry: Python](http://www.software-carpentry.org/v5/novice/python/index.html)
 - [iPython: Gallery of Interesting IPython Notebooks](https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks)
