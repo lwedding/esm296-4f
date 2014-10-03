@@ -11,9 +11,20 @@ output:
     self_contained: true
 ---
 
+**Due**: 8am Wednesday, 08 October 2014
+
+**Points**: 10 points
+
 # Introduction
 
 **Goal**. You've been tasked by the United Nations to assess countries with highest possible wind energy production.
+
+**Tasks**. Step by step instructions are provided for this lab. In the end you'll be submitting a report to your Github courses repository with the following elements:
+
+- image of a basic model extracting the data to a raster of wind speed
+- image of a model using a For iterator to loop over days of the year
+- global map of maximum wind speed by country
+- Python script creating the data
 
 This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you examining wind data for wind farm site suitability. However here we'll only be looking at the wind production aspect globally and not other finer scale suitability components. Although simplified in that sense we'll be adding a few dimensions:
 
@@ -68,6 +79,10 @@ Finally, you'll be using the best of breed scientific programming tools to track
     ![_Figure 2. Natural Earth administrative boundaries._](./img/natural-earth_admin0_countries.png)
 
 # Methods
+
+## Setup your Github courses repository
+
+See [git](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/git.html) for detailed instructions.
 
 ## Download Data
 
