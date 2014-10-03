@@ -40,7 +40,10 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
 - **Scientific Data Format**. You'll notice the $u$ and $v$ data files also have a *.nc filename extension which stands for "NetCDF" (Network Common Data Format) developed originally by climate scientists for exchanging scientific data in a variety of structures. Another common open-source scientific data format developed by the remote sensing community is "HDF" (Hierarchical Data Format)[^netcdf-hdf]. In this case the $u$.nc and $v$.nc data represent a cube of dimensions $x$, $y$ and $t$. We'll be extracting a time slice $t$ of the $u$ or $v$ wind values over the $x$ and $y$ direction.
 
     ![](./img/rubik-cube_x-y-t_sized.png)
-    <!-- source: https://docs.google.com/a/nceas.ucsb.edu/drawings/d/1K1ruRAgXhz6A8IgzgD4eXgXZTHakQZ75oF3rWZK1Wv8/edit -->
+    <!-- 
+    Google Drawing source: 
+    https://docs.google.com/a/nceas.ucsb.edu/drawings/d/1K1ruRAgXhz6A8IgzgD4eXgXZTHakQZ75oF3rWZK1Wv8/edit
+    -->
 
 [^netcdf-hdf]: Details for [NetCDF from UCAR](http://www.unidata.ucar.edu/software/netcdf/) and [HDF from NCSA](http://www.hdfgroup.org/).
 
@@ -50,7 +53,7 @@ Finally, you'll be using the best of breed scientific programming tools to track
 
 - **NCEP Reanalysis Wind Data**<br>
   http://www.ncdc.noaa.gov/societal-impacts/wind
-    - spatial resolution: 2.5 x 2.5 degrees and temporal resolution daily.
+    - spatial resolution: 2.5 x 2.5 degrees
     - temporal resolution: daily
     - file format: netcdf (*.nc)
   
@@ -59,7 +62,7 @@ Finally, you'll be using the best of breed scientific programming tools to track
 - **Natural Earth | 1:10m Cultural Vectors | Admin 0 – Countries**<br>
   http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/
     - spatial resolution: 1:10m
-    - version: 
+    - version: 3.1.0
     - file format: shapefile (*.shp)
     
     ![_Figure 2. Natural Earth administrative boundaries._](./img/natural-earth_admin0_countries.png)
