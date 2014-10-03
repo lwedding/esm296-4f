@@ -202,7 +202,7 @@ Now visualize the countries shapefile (`H:\esm296-4f\lab1\raw\ne_10m_admin_0_cou
 
 ## Report in Markdown
 
-Now you'll "write" (or rather copy paste below) a cursory report from RStudio menu File > New File > Text File. File > Save As... `H:\github\courses\esm296-4f\lab1\README.md`. You can use simply use this template. Be sure to open the table and sort descending on MAX and MEAN to substitute answers for the top 3 within this file.
+Now you'll "write" (or rather copy & paste template below) a cursory report from RStudio menu File > New File > Text File. File > Save As... `H:\github\courses\esm296-4f\lab1\README.md`. Be sure to open the zonal statistics table and sort descending on MAX and MEAN to substitute answers for the top 3 within this file.
 
 ```
 # Lab 1
@@ -241,7 +241,7 @@ The top 3 countries by MEAN wind speed were:
 
 ## Git Commit and Push from RStudio
 
-From your RStudio courses project (should appear in upper right as "courses" not "esm296-4f"; or simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up with Status yellow "??") in the Commit window. You can select multiple files at once by clicking at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message that includes the text (without quotes) "closes #2" which will close the Lab 2 issue (assuming it was the second one you created per instructions above). After committing the files, in the Git pane you'll see the info message "Your branch is ahead of 'orgin/master' by 1 commit". The 'origin/master' is actually referring to your Github online repository, so it's saying that you need to still Push the commits to get them to show up online.
+From your RStudio courses project ("courses" should appear in upper right, not "esm296-4f"; or simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up with Status yellow "??") in the Commit window. You can select multiple files at once by clicking at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message that includes the text (without quotes) "closes #2" which will close the Lab 2 issue (assuming it was the second one you created per instructions above; or you can simply visit that issue and close it after). After committing the files, in the Git pane you'll see the info message "Your branch is ahead of 'orgin/master' by 1 commit". The 'origin/master' is actually referring to your Github online repository, so it's saying that you need to still Push the commits to get them to show up online.
 
 ![](img/rstudio_git_ahead.png)
 
