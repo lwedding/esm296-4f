@@ -39,7 +39,7 @@ The **final group project** is **100 points total** and a Project Proposal is du
 ### Friday, October 3 - Course Intro & Programming in ArcGIS (Best; Frew)
 
 * Course Intro - Weekly lab topics, final project & grading
-        * slides ([PDF](https://purl.org/net/frew/ESM296/course_intro_slides.pdf))
+    * slides ([PDF](https://purl.org/net/frew/ESM296/course_intro_slides.pdf))
 
 * [**Lecture 1**](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lec1.html):
     * Introduction to Programming in ArcGIS
