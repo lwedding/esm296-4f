@@ -117,6 +117,8 @@ Now add the [Make NetCDF Raster Layer](http://resources.arcgis.com/en/help/main/
 
 ![](img/arc_make-netcdf-raster-layer_params.png)
 
+In order to populate Dimension of "time" Value of 1, you'll need to select "time" from the Dimension values drop down.
+
 Run this tool to see the output in ArcMap. You might need to right-click on the output  Add To Display.
 
 Repeat for the `v` and `2013` file, swapping out instances of `u` for `v`.
