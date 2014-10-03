@@ -224,22 +224,19 @@ https://docs.google.com/a/nceas.ucsb.edu/drawings/d/1K1ruRAgXhz6A8IgzgD4eXgXZTHa
 <div id="extract-country-summary" class="section level2">
 <h2><span class="header-section-number">3.8</span> Extract Country Summary</h2>
 <p>Now that you’ve extracted monthly slices of the wind speed, you’ll want to summarize for the year and then by country to arrive at the desired summary of wind production by country.</p>
-<p>You’ll need to create a new model ’</p>
+<p>You’ll need to create a new model (let’s label it <code>country_wind_summary</code>) to summarize the wind data by country since the <strong>For</strong> iterator executes all tools in the model at every iteration and you only want to run these tools once.</p>
 <div id="cell-statistics" class="section level3">
 <h3><span class="header-section-number">3.8.1</span> Cell Statistics</h3>
-<p>To summarize by year, you want to setup</p>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000">Cell Statistics</a> to get the MEAN wind speed on all the s_2013-##.tif rasters. I recommend outputting this raster to <code>H:\esm296-4f\lab1\out\s_2013_avg.tif</code> outside the file geodatabase.</p>
+<p>To summarize by year, you want to collapse all the monthly rasters into a single average raster using <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000">Cell Statistics</a> to get the MEAN wind speed on all the s_2013-##.tif rasters. I recommend outputting this raster to <code>H:\esm296-4f\lab1\out\s_2013_avg.tif</code> outside the file geodatabase. (Be careful not to include the s_001.tif from the first model so as to avoid double counting the first month.)</p>
 </div>
 <div id="zonal-statistics" class="section level3">
 <h3><span class="header-section-number">3.8.2</span> Zonal Statistics</h3>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//009z000000w8000000">Zonal Statistics As Table</a> to get the MIN_MAX_MEAN per country (recommend using NAME as Zone field).</p>
+<p>Next, you’ll want to summarize by country. Each country has many pixels in it, so let’s get the MIN, MAX and MEAN of all average wind speed pixels in the country. To do this use the <code>H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp</code> as the zone data with the <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//009z000000w8000000">Zonal Statistics As Table</a> to get the MIN_MAX_MEAN per country (recommend using NAME as Zone field).</p>
 </div>
 <div id="join-field" class="section level3">
 <h3><span class="header-section-number">3.8.3</span> Join Field</h3>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//001700000065000000">Join Field</a> to join the table back to the original country data.</p>
-<p>Once you’ve added these Python snippets to your code, be sure to commit the final changes to your script and push to your courses repository.</p>
-<p><code>H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp</code></p>
-<p>Export a PNG image of your model to <code>H:\github\courses\esm296-4f\lab1\img\country_wind_summary_model.png</code>.</p>
+<p>Now use <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//001700000065000000">Join Field</a> to join the output of the zonal statistics output table (join_table) to <code>H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp</code> (input_table, using field NAME).</p>
+<p>Export a PNG image of your model to <code>H:\github\courses\esm296-4f\lab1\img\country_wind_summary.png</code>.</p>
 </div>
 </div>
 <div id="create-map-of-countries-wind-production" class="section level2">
@@ -261,7 +258,7 @@ https://docs.google.com/a/nceas.ucsb.edu/drawings/d/1K1ruRAgXhz6A8IgzgD4eXgXZTHa
 
 ## Summarizing Model
 
-![](img/country_wind_summary_model.png)
+![](img/country_wind_summary.png)
 
 ## Country Max Wind Production
 
@@ -284,7 +281,9 @@ The top 3 countries by MEAN wind speed were:
 </div>
 <div id="git-commit-and-push-from-rstudio" class="section level2">
 <h2><span class="header-section-number">3.11</span> Git Commit and Push from RStudio</h2>
-<p>From your RStudio courses project (should appear in upper right as “courses” not “esm296-4f”; simply double click ’H:.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (show up as )</p>
+<p>From your RStudio courses project (should appear in upper right as “courses” not “esm296-4f”; or simply double click ’H:.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up with Status yellow “??”) in the Commit window. You can select multiple files at once by clicking at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message (always for a Commit.)</p>
+<p>Once you’ve added these Python snippets to your code, be sure to commit the final changes to your script and push to your courses repository.</p>
+<p><code>H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp</code></p>
 <p>If all’s well you should see images rendered and your report live here (replace USER with your Github username):</p>
 <p><a href="https://github.com/USER/courses/tree/master/esm296-4f/lab1">https://github.com/USER/courses/tree/master/esm296-4f/lab1</a></p>
 <p>and your issue for Lab 1 closed here:</p>

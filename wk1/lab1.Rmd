@@ -180,27 +180,21 @@ Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\uv_nc_
 
 Now that you've extracted monthly slices of the wind speed, you'll want to summarize for the year and then by country to arrive at the desired summary of wind production by country.
 
-You'll need to create a new model '
+You'll need to create a new model (let's label it `country_wind_summary`) to summarize the wind data by country since the **For** iterator executes all tools in the model at every iteration and you only want to run these tools once.
 
 ### Cell Statistics
 
-To summarize by year, you want to setup 
-
-[Cell Statistics](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000) to get the MEAN wind speed on all the s_2013-##.tif rasters. I recommend outputting this raster to `H:\esm296-4f\lab1\out\s_2013_avg.tif` outside the file geodatabase.
+To summarize by year, you want to collapse all the monthly rasters into a single average raster using [Cell Statistics](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000) to get the MEAN wind speed on all the s_2013-##.tif rasters. I recommend outputting this raster to `H:\esm296-4f\lab1\out\s_2013_avg.tif` outside the file geodatabase. (Be careful not to include the s_001.tif from the first model so as to avoid double counting the first month.)
 
 ### Zonal Statistics
 
-[Zonal Statistics As Table](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z000000w8000000) to get the MIN_MAX_MEAN per country (recommend using NAME as Zone field).
+Next, you'll want to summarize by country. Each country has many pixels in it, so let's get the MIN, MAX and MEAN of all average wind speed pixels in the country. To do this use the `H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp` as the zone data with the [Zonal Statistics As Table](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z000000w8000000) to get the MIN_MAX_MEAN per country (recommend using NAME as Zone field).
 
 ### Join Field
 
-[Join Field](http://resources.arcgis.com/en/help/main/10.2/index.html#//001700000065000000) to join the table back to the original country data.
+Now use [Join Field](http://resources.arcgis.com/en/help/main/10.2/index.html#//001700000065000000) to join the output of the zonal statistics output table (join_table) to `H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp` (input_table, using field NAME).
 
-Once you've added these Python snippets to your code, be sure to commit the final changes to your script and push to your courses repository.
-
-`H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`
-
-Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\country_wind_summary_model.png`.
+Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\country_wind_summary.png`.
 
 ## Create Map of Countries Wind Production
 
@@ -223,7 +217,7 @@ Now you'll "write" (or rather copy paste below) a cursory report from RStudio me
 
 ## Summarizing Model
 
-![](img/country_wind_summary_model.png)
+![](img/country_wind_summary.png)
 
 ## Country Max Wind Production
 
@@ -247,7 +241,12 @@ The top 3 countries by MEAN wind speed were:
 
 ## Git Commit and Push from RStudio
 
-From your RStudio courses project (should appear in upper right as "courses" not "esm296-4f"; simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (show up as )
+From your RStudio courses project (should appear in upper right as "courses" not "esm296-4f"; or simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up with Status yellow "??") in the Commit window. You can select multiple files at once by clicking at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message (always for a Commit.)
+
+Once you've added these Python snippets to your code, be sure to commit the final changes to your script and push to your courses repository.
+
+`H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`
+
 
 If all's well you should see images rendered and your report live here (replace USER with your Github username):
 
