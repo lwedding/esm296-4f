@@ -198,7 +198,7 @@ Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\countr
 
 ## Create Map of Countries Wind Production
 
-Now visualize the countries shapefile (`H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`) with the newly added MAX value to create a color ramped global map of max wind production. Use the Natural Jenk's 10 breaks with a rainbow color ramp (blue=low, red=high) for the symbology. Zoom to the layer and File Export map as PNG to `H:\github\courses\esm296-4f\lab1\img\country_wind.png`. (No need to make it super pretty with legends and such, just getting the gist.)
+Now visualize the countries shapefile (`H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`) with the newly added MAX value to create a color ramped global map of max wind production. Use the Natural Jenk's 10 breaks with a rainbow color ramp (blue=low, red=high) for the symbology. Zoom to the layer and File Export map as PNG to `H:\github\courses\esm296-4f\lab1\img\country_wind_map.png`. (No need to make it super pretty with legends and such, just getting the gist.)
 
 ## Report in Markdown
 
@@ -241,12 +241,9 @@ The top 3 countries by MEAN wind speed were:
 
 ## Git Commit and Push from RStudio
 
-From your RStudio courses project (should appear in upper right as "courses" not "esm296-4f"; or simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up with Status yellow "??") in the Commit window. You can select multiple files at once by clicking at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message (always for a Commit.)
+From your RStudio courses project (should appear in upper right as "courses" not "esm296-4f"; or simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up with Status yellow "??") in the Commit window. You can select multiple files at once by clicking at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message that includes the text (without quotes) "closes #2" which will close the Lab 2 issue (assuming it was the second one you created per instructions above). After committing the files, in the Git pane you'll see the info message "Your branch is ahead of 'orgin/master' by 1 commit". The 'origin/master' is actually referring to your Github online repository, so it's saying that you need to still Push the commits to get them to show up online.
 
-Once you've added these Python snippets to your code, be sure to commit the final changes to your script and push to your courses repository.
-
-`H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`
-
+![](img/rstudio_git_ahead.png)
 
 If all's well you should see images rendered and your report live here (replace USER with your Github username):
 
@@ -254,6 +251,6 @@ https://github.com/USER/courses/tree/master/esm296-4f/lab1
 
 and your issue for Lab 1 closed here:
 
-https://github.com/USER/courses/issues/1
+https://github.com/USER/courses/issues/2
 
 Congratulations! You're done.
