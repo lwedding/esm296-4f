@@ -8,7 +8,7 @@ Fridays, 03&ndash;31 October 2014 (5 weeks), at 08:30&ndash;11:30, in Bren 3035 
 
 ## Instructors
 
-* Ben Best
+* [Ben Best](http://cmap.msi.ucsb.edu/people/ben-best)
     * <bbest@nceas.ucsb.edu>
     * office hours: after class, 15:00–17:00, in Bren 4324
 * [James Frew](http://frew.eri.ucsb.edu/)
@@ -38,20 +38,29 @@ The **final group project** is **100 points total** and a Project Proposal is du
 
 ### Friday, October 3 - Course Intro & Programming in ArcGIS (Best; Frew)
 
-* **Lecture 1**:
-    * Course Intro - Weekly lab topics, final project & grading
+* Course Intro - Weekly lab topics, final project & grading
         * slides ([PDF](https://purl.org/net/frew/ESM296/course_intro_slides.pdf))
+
+* [**Lecture 1**](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lec1.html):
     * Introduction to Programming in ArcGIS
         * ArcGIS Model Builder - > Python
     * Intro to Github
     * Programming with ArcPy
-* **Lab 1**: Wind Energy Lab
+    
+* [**Lab 1**](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html): Wind Energy Lab
+
+Support materials:
+
+- [git](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/git.html)
+- [rmarkdown_cheatsheet](./rmarkdown_cheatsheet.pdf)
+
 
 ### Friday, October 10 - Open-source GIS (Frew)
 
 * **Lecture 2**: Introduction to Open-source GIS
     * GDAL/OGR
     * QGIS (w/ GRASS)
+    
 * **Lab 2**: Applications in Open-source GIS
 
 ### Friday, October 17 - Extending ArcGIS with InVEST (Wedding)

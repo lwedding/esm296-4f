@@ -90,6 +90,7 @@ Division of labor:
 - git performs these actions
 - github stores repositories online
 
+<br>
 
 Permissions:
 
@@ -117,11 +118,16 @@ BAD:
 
 So your local file structure will look like this:
 
-H:/
+**`H:/`**
 
-- **github/esm296-4f**: read-only course repo
-- **github/courses/esm296-4f**: read-write personal courses repo containing esm296-4f folder
-- **esm296-4f/**: personal workspace for working through labs and everything else, especially for big data files
+- **`github/esm296-4f`** <br>
+  read-only repo for course
+  
+- **`github/courses/esm296-4f`** <br>
+  read-write personal `courses` repo containing `esm296-4f` folder
+  
+- **`esm296-4f`** <br>
+  personal workspace for working through labs and everything else, especially for big data files
 
 # Cool Features of Github
 
@@ -146,3 +152,31 @@ H:/
 **Geographic View** of GeoJSON renders automatically as a map.
 
 ![ohi geojson](./img/github_geojson_ohi_sized.png)
+
+## Examples  {.smaller}
+
+<div class="columns-2">
+
+National Center for Ecological Analysis and Synthesis (NCEAS) <br>
+Open Science for Synthesis 2014: Software Skills Training for Early Career Scientists<br>
+[github.com/nceas/training](https://github.com/nceas/training)
+    
+![](img/nceas_training_class.jpg)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+[Scientific writing: the online cooperative](http://www.nature.com/news/scientific-writing-the-online-cooperative-1.16039) - Nature (01 October 2014)<br>
+_Collaborative browser-based tools aim to change the way researchers write and publish their papers._
+
+![](img/nature_collab-writing.jpg)
+
+# Lab
+
+[**Lab 1**](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html): Wind Energy Lab
+
