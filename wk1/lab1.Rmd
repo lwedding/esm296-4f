@@ -107,7 +107,11 @@ You'll need to have the Spatial Analyst extension ticked on (ArcMap menu Customi
 
 ## Extract Raster Layer from NetCDF
 
-Create a new Model within lab1.tbx and Edit it. Set Model > Model Properties to "Store relative path names" and give it a label of "uv_nc_to_s_tif" (you can keep the default name).
+Create a new Model within lab1.tbx and Edit it. Set Model > Model Properties to "Store relative path names" and give it a label of "uv_nc_to_s_tif" (you can keep the default model name).
+
+You'll be asked to find tools for adding to Model Builder or running independantly. I find the easiest way is to use the Search Window (click on ![](img/arc_search_btn.png)), click Tools and Type there.
+
+![](img/arc_search_pane.png)
 
 Now add the [Make NetCDF Raster Layer](http://resources.arcgis.com/en/help/main/10.2/index.html#//004300000006000000) tool navigate to the input file `raw/uwnd.sig995.2013.nc` (note: `u` and `2013`) with further parameters like so:
 
