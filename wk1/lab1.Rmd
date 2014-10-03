@@ -202,7 +202,7 @@ Now visualize the countries shapefile (`H:\esm296-4f\lab1\raw\ne_10m_admin_0_cou
 
 ## Report in Markdown
 
-Now you'll "write" (or rather copy & paste template below) a cursory report from RStudio menu File > New File > Text File. File > Save As... `H:\github\courses\esm296-4f\lab1\README.md`. Be sure to open the zonal statistics table and sort descending on MAX and MEAN to substitute answers for the top 3 within this file.
+Now you'll "write" (or rather copy & paste template below) a cursory report from RStudio menu File > New File > Text File. File > Save As... `H:\github\courses\esm296-4f\lab1\README.md`. For more on markdown (*.md), see Step 3 of the [rmarkdown cheatsheet](rmarkdown_cheatsheet.pdf). Be sure to open the zonal statistics table and sort descending on MAX and MEAN to substitute answers for the top 3 within this file.
 
 ```
 # Lab 1
