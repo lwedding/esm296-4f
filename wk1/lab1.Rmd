@@ -67,6 +67,7 @@ Finally, you'll be using the best of breed scientific programming tools to track
     - spatial resolution: 2.5 x 2.5 degrees
     - temporal resolution: daily
     - file format: netcdf (*.nc)
+    - files: `H:\esm296-4f\lab1\raw\uwnd.sig995.2013.nc`, `vwnd.sig995.2013.nc`
   
     ![_Figure 1. Mean wind speed in USA interpolated to 0.25 x 0.25 degrees._](./img/sig995_wind_201308.gif)
   
@@ -75,6 +76,7 @@ Finally, you'll be using the best of breed scientific programming tools to track
     - spatial resolution: 1:10m
     - version: 3.1.0
     - file format: shapefile (*.shp)
+    - file: `H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`
     
     ![_Figure 2. Natural Earth administrative boundaries._](./img/natural-earth_admin0_countries.png)
 
@@ -172,207 +174,19 @@ SquareRoot( Square("u_%j%") + Square("v_%j%") )
 
 The link from the u and v input to Raster Calculator gets lost, so you'll need to link `u_%j%` and `v_%j%` to the Raster Calculator as a "precondition" so these get generated first and are available to the Raster Calculator.
 
-
-## Export to Script
-
-While it gets the job mostly done, there are a few reasons I don't like the above approach:
-
-- The %j% substitution can get a little confusing.
-- The outputs don't sort well since they're not zero padded like s_001.tif.
-- The julian day or index number makes it hard to tell which month it should refer to and it won't be the middle of the month exactly.
-- Every function within the model having an Iterator gets repeated that many times. We can't perform a single process before to prepare the data nor after to summarize unless we [create model parameters](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000003z000000) and nest one model within another. Doable but less than straightforward.
-
-Instead, let's start programming in Python where we have freedom for more sophisticated all-in-one analysis. To get started export the uv_nc_to_s_tif model (before including the iterator) to a Python script (Model Builder menu Model > Export > To Python Script...) and save to `H:\github\courses\esm296-4f\lab1\uv_nc_to_s_tif.py`.
-
-Since you placed your script in the courses repo, you should see it show up in the git pane.
-
-![](img/rstudio_git_uv-model-py.png).
-
-Go ahead and click on Commit tick the file to add it, include a message and click on Commit. Then as we improve upon the script you can see which parts changed and even revert back to past versions if needed.
-
-## WinPython
-
-Let's use a Python editor to open the script. You can simply navigate there in Windows Explorer, right click > Edit with Pythonwin.
-
-![](img/winpython_edit.png)
-
-## Intro to Python
-
-Let's look at a few sample lines of the exported code from ModelBuilder. Like  Git Bash, Python comments are preceeded with `#`.
-
-```python
-# Import arcpy module
-import arcpy
-
-# Check out any necessary licenses
-arcpy.CheckOutExtension("spatial")
-
-# Local variables:
-uwnd_sig995_2013_nc = "H:\\esm296-4f\\lab1\\raw\\uwnd.sig995.2013.nc"
-
-# ...
-
-# Process: Make NetCDF Raster Layer
-arcpy.MakeNetCDFRasterLayer_md(uwnd_sig995_2013_nc, "uwnd", "lon", "lat", u_001, "", "time 1", "BY_INDEX")
-```
-
-The arcpy module is what provides all the ArcGIS geoprocessing functions. Syntax follows `object.function()` or `object.property`. Input arguments to a function are surrounded by paranthesis and seperated by commas. Assignment of variables is with `=` whereas testing equality is `==` which would return True or False. You can try out the following lines in the Interactive Window of PythonWin. 
-
-```python
-1 + 1
-a = 1
-b = 2
-a == b
-
-import antigravity
-```
-
-While it's a nice editor, you can't simply copy/paste more than one line of code from and Editor window to the Interactive Window (although you can copy multiple lines, right-click in Interactive Window and "Execute python code from clipboard").
-
-## Python Window in ArcMap
-
-I prefer editing code in Winpython and running chunks of code in ArcMap's [Python window](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000017000000) (available from the main toolbar as ![](img/python_cmd_btn.png)) which does allow copy and paste of multiple lines of code.
-
-![](img/arcmap_python_window.png)
-
-Launch the Python Window in ArcMap and try out the following explained in [Using the Python window](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000018000000).
-
-```python
-
-# hello world
-print "Hello Jack!"
-count = 0
-count
-
-# assignment
-x = 1
-y = 2
-print x + y
-
-
-# a loop. note the indentation
-for count in range(1,5):
-  print count
-  
-
-# paths: these all work the same when passed to a function
-# the backslash is the "escape" character like \n for newline or \t for tab
-#   so have to escape the escape character (thanks to Windoze)
-# the last one prefixed with r'' for raw format
-#   is the cleanest / laziest because you can copy/paste from Explorer
-shp = "H:\\esm296-4f\\lab1\\raw\\ne_10m_admin_0_countries.shp"
-shp = "H:/esm296-4f/lab1/raw/ne_10m_admin_0_countries.shp"
-shp = r"H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp"
-shp = r'H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp'
-
-# use arcpy to get the count of features in the shapefile
-import arcpy
-arcpy.GetCount_management(shp)
-```
-
-## Simplify and Loop
-
-The ModelBuilder export is a little verbose and extraneous with its variable naming. Let's clean up the code to make a bit more sense of it in PythonWin so we can get into looping. Go to menu Edit > Replace, copy/paste without quotes below, Replace All:
-
-  - Find:"_001", Replace:""
-  - Find:"wnd_sig995_2013", Replace:""
-
-You should then have these extraneous variables:
-
-```python
-u = "u"
-s = "in_memory\\s"
-v = "v"
-```
-
-Since these are temporary in memory objects, you can delete their assignment lines above and replace the variable name with their string value in the functions below that. For example `u` to `"u"` from:
-
-```
-arcpy.MakeNetCDFRasterLayer_md(u_nc, "uwnd", "lon", "lat", u, "", "time 1", "BY_INDEX")
-```
-
-to:
-
-```
-arcpy.MakeNetCDFRasterLayer_md(u_nc, "uwnd", "lon", "lat", "u", "", "time 1", "BY_INDEX")
-```
-
-Do this for all instances of the `u`,`v`,`s` variables (but not `u_nc`,`v_nc`, `s_tif` -- the input/output variables). Be sure to replace the `s` variable with `"in_memory\\s"` though.
-
-Also replace the `\"%u%\"` and `\"%v%\"` with simply `'u'` and `'v'` since these are no longer needed to perform inline variable substitution for some other raster path value as they did before in ModelBuilder.
-
-Next, let's insert a loop after defining u and v to loop through every 30th day of the year like we did with the Iterator in Model Builder previously.
-
-```python
-# loop
-for j in range(1, 365, 30):
-    
-    s_tif = "H:\\esm296-4f\\lab1\\out\\s_%03d.tif" % j
-    print s_tif
-```
-
-The s_tif has been modified with a [string formatting operation](https://docs.python.org/release/2.4.4/lib/typesseq-strings.html) ot indicate a zero-padded triple digit `%02d` value is expected after the `%` outside the string.
-
-Apply the same logic to `"time 1"` except we don't need zero padding so just `%d` inside the string.
-
-Before you try running the code, I recommend adding this line after `arcpy.CheckOutExtension("spatial")` to enable overwriting output:
-
-```
-arcpy.env.overwriteOutput = True
-```
-
-Now copy/paste all the code into the ArcMap Python Window. You will probably have to debug some minor syntatic errors (this is the majority effort in programming, truth be told [py-loop-answer]). Once you're able to get this to work, be sure commit your changes.
-
-## Use Dates in Loop
-
-Now that we're in a proper programming environment, we can take advantage of other modules like [datetime](https://docs.python.org/2/library/datetime.html). (Python comes with many [available modules](https://docs.python.org/2/py-modindex.html), hence the term "batteries included".) It would be best if we centered the julian day index on the 15th of the month for each month. To accomplish this, swap in these lines:
-
-
-```python
-yr = 2013
-for mo in range(1, 13):
-
-    j = (datetime.date(yr, mo, 15) - datetime.date(yr, 1, 1) + datetime.timedelta(1)).days    
-    s_tif = "H:\\esm296-4f\\lab1\\out\\s_%d-%02d.tif" % (yr, mo)
-```
-
-For those datetime functions to be available, you'll need to import the module prior (preferably in vicinity of the other `import arcpy` statement).
-
-```python
-import datetime
-```
+Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\uv_nc_to_s_tif_iterator.png`.
 
 ## Extract Country Summary
 
-Note that you can type a function in the ArcMap Python Window and on the right hand side it will provide the help documentation for that function.
+Now that you've extracted monthly slices of the wind speed, you'll want to summarize for the year and then by country to arrive at the desired summary of wind production by country.
 
-I also find it handy to run any tool and then go into the [Geoprocessing Results](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000013000000)) pane (menu Geoprocessing > Results), right click on an executed tool and Copy As Python Snippet to get the function name and all its parameters.
-
-  ![](img/geoprocessing-results_copy-python-snippet.png)
-
-
-Use this trick to add the final three lines to your script. Be sure to navigate to the filesystem path of all the inputs and not use layers only temporarily available in ArcMap memory. This will make the Python snippet reusable in the future and prevent comments like this in your snippets:
-
-```
-# Replace a layer/table view name with a path to a dataset (which can be a layer file) or create the layer/table view within the script
-# The following inputs are layers or table views: "s_2013_avg_country_stats"
-```
+You'll need to create a new model '
 
 ### Cell Statistics
 
+To summarize by year, you want to setup 
+
 [Cell Statistics](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000) to get the MEAN wind speed on all the s_2013-##.tif rasters. I recommend outputting this raster to `H:\esm296-4f\lab1\out\s_2013_avg.tif` outside the file geodatabase.
-
-If you did this the same as me then the first argument looks like this.
-
-```python
-"H:/esm296-4f/lab1/out/s_2013-12.tif;H:/esm296-4f/lab1/out/s_2013-01.tif;H:/esm296-4f/lab1/out/s_2013-02.tif;H:/esm296-4f/lab1/out/s_2013-03.tif;H:/esm296-4f/lab1/out/s_2013-04.tif;H:/esm296-4f/lab1/out/s_2013-05.tif;H:/esm296-4f/lab1/out/s_2013-06.tif;H:/esm296-4f/lab1/out/s_2013-07.tif;H:/esm296-4f/lab1/out/s_2013-08.tif;H:/esm296-4f/lab1/out/s_2013-09.tif;H:/esm296-4f/lab1/out/s_2013-10.tif;H:/esm296-4f/lab1/out/s_2013-11.tif","H:/esm296-4f/lab1/out/s_2013_avg.tif"
-```
-  
-which is quite beastly (scroll right). One cool feature of Python is its [list comprehensions](https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions) so above can be condensed.
-  
-`';'.join(['H:/esm296-4f/lab1/out/s_2013-%02d.tif' % mo for mo in range(1, 13)])`
-  
-The iterable list is used as input to the [string join](https://docs.python.org/2/library/stdtypes.html#str.join).
 
 ### Zonal Statistics
 
@@ -384,28 +198,38 @@ The iterable list is used as input to the [string join](https://docs.python.org/
 
 Once you've added these Python snippets to your code, be sure to commit the final changes to your script and push to your courses repository.
 
+`H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`
+
+Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\country_wind_summary_model.png`.
+
 ## Create Map of Countries Wind Production
 
-Use the MAX value joined to the country to create a color ramped global map of wind production. Export as PNG to `H:\github\courses\esm296-4f\lab1\img\country_wind.png`.
+Now visualize the countries shapefile (`H:\esm296-4f\lab1\raw\ne_10m_admin_0_countries.shp`) with the newly added MAX value to create a color ramped global map of max wind production. Use the Natural Jenk's 10 breaks with a rainbow color ramp (blue=low, red=high) for the symbology. Zoom to the layer and File Export map as PNG to `H:\github\courses\esm296-4f\lab1\img\country_wind.png`. (No need to make it super pretty with legends and such, just getting the gist.)
 
 ## Report in Markdown
 
-Now just write a cursory report from RStudio menu File > New File > Text File. File > Save As... `H:\github\courses\esm296-4f\lab1\README.md`. You can use simply use this template. Be sure to open the table and sort descending on MAX and MEAN to substitute answers for top 3.
+Now you'll "write" (or rather copy paste below) a cursory report from RStudio menu File > New File > Text File. File > Save As... `H:\github\courses\esm296-4f\lab1\README.md`. You can use simply use this template. Be sure to open the table and sort descending on MAX and MEAN to substitute answers for the top 3 within this file.
 
 ```
 # Lab 1
 
 ## Basic Model
 
-![](img\uv_nc_to_s_tif.png)
+![](img/uv_nc_to_s_tif.png)
 
 ## Model with Iterator
 
-![](img\uv_nc_to_s_tif.png)
+![](img/uv_nc_to_s_tif_iterator.png)
+
+## Summarizing Model
+
+![](img/country_wind_summary_model.png)
 
 ## Country Max Wind Production
 
-![](img\country_wind.png)
+![](img/country_wind_map.png)
+
+## Summary of Top Countries
 
 The top 3 countries by MAX wind speed were:
 
@@ -419,90 +243,18 @@ The top 3 countries by MEAN wind speed were:
 1. [Country E]
 1. [Country F]
 
-## Python Script
-
-[uv_nc_to_s_tif.py](uv_nc_to_s_tif.py)
-
 ```
 
-Github automatically renders this markdown, but you can also Preview HTML in RStudio. When you commit it, use the message `closes #2` to flag your lab done. Yay!
+## Git Commit and Push from RStudio
 
-You'll learn more about markdown and Rmarkdown next week, but here are some basics:
+From your RStudio courses project (should appear in upper right as "courses" not "esm296-4f"; simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (show up as )
 
-- [rmarkdown_cheatsheet.pdf](rmarkdown_cheatsheet.pdf)
-- https://help.github.com/articles/markdown-basics
-- https://guides.github.com/features/mastering-markdown/
-- https://stackedit.io
+If all's well you should see images rendered and your report live here (replace USER with your Github username):
 
-## Extra: Create Raster Catalog for Time Slider Visualization
+https://github.com/USER/courses/tree/master/esm296-4f/lab1
 
-For kicks and giggles, by loading the rasters into a raster catalog, you can use the [Time Slider](http://resources.arcgis.com/en/help/main/10.2/index.html#//005z0000000z000000) and [create animations](http://resources.arcgis.com/en/help/main/10.2/index.html#/Creating_a_time_animation/000900000069000000/).
+and your issue for Lab 1 closed here:
 
-![](img/arcmap_time-slider.png)
+https://github.com/USER/courses/issues/1
 
-Here's the code to populate the raster catalog.
-
-```python
-# create raster catalog for use with Time Slider and generating an animation
-import os
-rasters = ';'.join(['H:/esm296-4f/lab1/out/s_2013-%02d.tif' % mo for mo in range(1, 13)])
-catalog = 'H:/esm296-4f/lab1/lab1.gdb/wind_catalog'
-arcpy.CreateRasterCatalog_management(os.path.dirname(catalog), os.path.basename(catalog), raster_management_type='UNMANAGED')
-arcpy.RasterToGeodatabase_conversion(rasters, catalog)
-arcpy.CalculateDefaultGridIndex_management(catalog)
-arcpy.AddField_management(catalog, 'date_beg', 'DATE')
-arcpy.AddField_management(catalog, 'date_end', 'DATE')
-code_block = """
-def get_date(s, p):
-    y = int(s[2:6])
-    m = int(s[7:9])
-    if p == 'beg':
-        return datetime.datetime(y, m, 1)
-    elif p == 'end':
-        if m == 12:
-            return datetime.datetime(y+1, 1, 1) - datetime.timedelta(1)
-        else:
-            return datetime.datetime(y, m+1, 1) - datetime.timedelta(1)       
-"""
-arcpy.CalculateField_management(catalog, 'date_beg', "get_date(!Name!, 'beg')", 'PYTHON_9.3', code_block)
-arcpy.CalculateField_management(catalog, 'date_end', "get_date(!Name!, 'end')", 'PYTHON_9.3', code_block)```
-```
-
-You'll need to [enable time](http://resources.arcgis.com/en/help/main/10.2/index.html#//005z0000000p000000) on this layer before being able to use the Time Slider.
-
-![](img/arcmap_time-aware-layer.png)
-
-## EXTRA: Create a Script Tool
-
-We started off in Model Builder and exported to a Python script. You can further take a python script and turn it into a Script Tool to use back in Model Builder or on its own.
-
-![](img/script-tool_catalog.png)
-
-Here's a snippet of code to setup input arguments:
-
-```python
-import sys
-
-u_nc = sys.argv[1] # "H:\\esm296-4f\\lab1\\raw\\uwnd.sig995.2013.nc"
-v_nc = sys.argv[2] # "H:\\esm296-4f\\lab1\\raw\\vwnd.sig995.2013.nc"
-yr   = sys.argv[3] # 2013
-```
-
-In concept, we could make this script tool take input arguments like above for a different year's worth of data and apply the same analysis. This would require a fair amount of recoding so too much for this lab, but worth sharing the idea.
-
-
-![](img/script-tool_params.png)
-
-Here's more on creating Script Tools:
-
-* [ArcGIS Help 10.2 - A quick tour of creating tools with Python](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000002q000000)
-* [ArcGIS Help 10.2 - What is a script tool?](http://resources.arcgis.com/en/help/main/10.2/index.html#//001500000006000000)
-* [ArcGIS Help 10.2 - Adding a script tool](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000001r000000)
-* [ArcGIS Help 10.2 - Setting script tool parameters](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000n000000)
-* [ArcGIS Help 10.2 - Debugging script tools](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000m000000)
-
-## More on Python
-
-* [ArcGIS Help 10.2 - Writing Python scripts](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000021000000)
-- [Software Carpentry: Python](http://www.software-carpentry.org/v5/novice/python/index.html)
-- [iPython: Gallery of Interesting IPython Notebooks](https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks)
+Congratulations! You're done.
