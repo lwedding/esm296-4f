@@ -19,10 +19,20 @@ This lab, similar to the wind siting analysis Lab 3 from ESM 263 (GIS), has you 
 
 - **Time**. Rather than being provided average wind production throughout the year, you're provided with daily wind data for a given year. The task then is to work out an annual average. This introduces analysis in time and necessitates a looping strategy. We'll show you how to do this in Model Builder with Iterators and programmatically in Python. You'll learn only the cursory basics in Python for now to complete the task. You'll then create a Script Tool to easily perform the same analysis for any year of data. You'll also learn how to visualize geographic elements temporally using the Time Slider and even outputting a video.
 
-- **Polar Coordinates**. Rather than simply being given the wind speed, you are provided wind speed in the horizontal ($u$) and vertical ($v$) direction. These vectors in a "polar coordinate system" can be translated into the "Cartesian coordinate system" giving us the speed ($s$) using good ol' Pythagorean theorem [^polar]:
+- **Polar Coordinates**. Rather than simply being given the wind speed, you are provided wind speed in the horizontal ($u$) and vertical ($v$) direction. These vectors are in the "Cartesian coordinate system" and can be translated into the "polar coordinate system" giving us the speed ($s$) using good ol' Pythagorean theorem [^polar]:
+
+  ![](img/polar_cartesian.png)
+  <!-- 
+  Google drawing source:
+  https://docs.google.com/a/nceas.ucsb.edu/drawings/d/1PFUPMmjjDKs6SHRVVPFy4hY0G9oSzR5cer39ShS0PiU/edit 
+  -->
 
   $$
   s = \sqrt{u^2 + v^2}
+  $$
+  
+  $$
+  \theta = atan2(u, v)
   $$
   
 [^polar]: For details on conversion betwen coordinate systems, see [Wikipedia: Polar coordinate system - Converting between polar and Cartesian coordinates](http://en.wikipedia.org/wiki/Polar_coordinate_system#Converting_between_polar_and_Cartesian_coordinates). Note that the [geographic coordinate system](http://en.wikipedia.org/wiki/Geographic_coordinate_system) and [projected coordinate systems](http://en.wikipedia.org/wiki/Map_projection) are for measuring locations and not angle & magnitude like the polar / Cartesian coordinate systems here.
@@ -143,11 +153,14 @@ The link from the u and v input to Raster Calculator gets lost, so you'll need t
 
 While it gets the job mostly done, there are a few reasons I don't like the above approach:
 
-- The %j% substitution gets squirrely like in Raster Calculator above.
-- The outputs don't sort well since they're not zero padded like s_001.tif
+- The %j% substitution can get a little confusing.
+- The outputs don't sort well since they're not zero padded like s_001.tif.
 - The julian day or index number makes it hard to tell which month it should refer to and it won't be the middle of the month exactly.
+- Every function within the model having an Iterator gets repeated that many times. We can't perform a single process before to prepare the data nor after to summarize unless we [create model parameters](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000003z000000) and nest one model within another. Doable but less than straightforward.
 
-This all leads us to doing it right in a Python script. A great way to get started is editing the first model uv_nc_to_s_tif, menu Model > Export > To Python Script... and save to `H:\github\courses\esm296-4f\lab1\uv_nc_to_s_tif.py`.
+Instead, let's start programming in Python where we have freedom for more sophisticated all-in-one analysis. To get started export the uv_nc_to_s_tif model (before including the iterator) to a Python script (Model Builder menu Model > Export > To Python Script...) and save to `H:\github\courses\esm296-4f\lab1\uv_nc_to_s_tif.py`.
+
+Since you're placing this script in your 
 
 
 ...Get a command line going...
