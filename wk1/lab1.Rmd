@@ -241,7 +241,7 @@ The top 3 countries by MEAN wind speed were:
 
 ## Git Commit and Push from RStudio
 
-From your RStudio courses project ("courses" should appear in upper right, not "esm296-4f"; or simply double click 'H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up with Status yellow "??") in the Commit window. You can select multiple files at once by clicking at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message that includes the text (without quotes) "closes #2" which will close the Lab 2 issue (assuming it was the second one you created per instructions above; or you can simply visit that issue and close it after). After committing the files, in the Git pane you'll see the info message "Your branch is ahead of 'orgin/master' by 1 commit". The 'origin/master' is actually referring to your Github online repository, so it's saying that you need to still Push the commits to get them to show up online.
+From your RStudio courses project ("courses" should appear in upper right, not "esm296-4f"; or simply double click `H:\github\courses\courses.Rproj` in Windows Explorer to get there), use the Git pane to Commit all new untracked files (which show up under Status as yellow "??") in the Commit window. You can select multiple files at once by clicking once at the top of the list, holding shift and clicking bottom of list, Stage All. Enter a message that includes the text (without quotes) "closes #2" which will close the Lab 2 issue (assuming it was the second one you created per instructions above; or you can simply visit that issue and close it after). After committing the files, in the Git pane you'll see the info message "Your branch is ahead of 'orgin/master' by 1 commit". The 'origin/master' is actually referring to your Github online repository, so it's saying that you need to still Push the commits to get them to show up online. Be sure to Push your final commits.
 
 ![](img/rstudio_git_ahead.png)
 
@@ -252,5 +252,7 @@ https://github.com/USER/courses/tree/master/esm296-4f/lab1
 and your issue for Lab 1 closed here:
 
 https://github.com/USER/courses/issues/2
+
+Since you invited the instructors already to your github site, we should get notified when the issue is closed and can have a look.
 
 Congratulations! You're done.
