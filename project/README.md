@@ -10,7 +10,7 @@ For the final project, you can:
 
 If you choose a species, please visit [gbif.org](http://www.gbif.org) to confirm observation data are available and capture a screenshot of the map.  For example, humpback whale (_Megaptera novaeangliae_):
 
-![](img/gbif_humpback_whale.png)
+![](../wk1/img/gbif_humpback_whale.png)
 
 ## Ecosystem Service
 
