@@ -168,7 +168,7 @@ Let's similarly setup an RStudio project for your courses repo. Go to menu File 
 
 ![](img/rstudio_new-project_existing-courses.png)
 
-In the Files pane (lower right) click on README.md, modify the text (simply adding a return will do) in the editor pane. Notice the Git pane in which the newly added file courses.Rproj has a "?" Status indicating it is an "untracked file" like `git status` in the Git Bash previously told us. And now the README.md has a status of "M" for modified. 
+In the Files pane (lower right) click on README.md, modify the text (simply adding a return will do) in the editor pane. Save the file. Notice the Git pane in which the newly added file courses.Rproj has a "?" Status indicating it is an "untracked file" like `git status` in the Git Bash previously told us. And now the README.md has a status of "M" for modified. 
 
 ![](img/rstudio_git_files-mod-unadded.png)
 
