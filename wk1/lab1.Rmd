@@ -196,7 +196,8 @@ Let's walk through a few iterations to fully grasp the inline variable substitut
 - Raster Calculator: `in_memory\s_%j%` -> `in_memory\s_361`
 - Resample: `H:\esm296-4f\lab1\out\s_%j%.tif` -> `H:\esm296-4f\lab1\out\s_361.tif`
 
-It's a good idea to [Validate the Entire Model](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000003n000000) so that no shadows exist and it runs all the tools at each iteration.
+Before running, it's a good idea to [Validate the Entire Model](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000003n000000) so that no shadows exist and it runs all the tools at each iteration.
+
 Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\uv_nc_to_s_tif_iterator.png`.
 
 ## Extract Country Summary
