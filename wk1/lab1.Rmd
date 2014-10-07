@@ -172,8 +172,31 @@ Continue swapping out all instances of `1` or `001` with `%j%` in the function p
 SquareRoot( Square("u_%j%") + Square("v_%j%") )
 ```
 
-The link from the u and v input to Raster Calculator gets lost, so you'll need to link `u_%j%` and `v_%j%` to the Raster Calculator as a "precondition" so these get generated first and are available to the Raster Calculator.
+The link from the $u$ and $v$ as inputs to the Raster Calculator gets lost, so you'll need to tell ModelBuilder to generate the needed $u$ and $v$ outputs (which should be named `u_%j%` and `v_%j%`) before running the Raster Calculator. You can do this by [setting preconditions](http://resources.arcgis.com/en/help/main/10.1/index.html#//002w00000067000000) to the Raster Calculator which ensures these inputs are available first.
 
+Let's walk through a few iterations to fully grasp the inline variable substitution happening with the For iterator which assigns the value of variable `%j%`. All instances of `%j%` are then replaced with this value.
+
+- For: `%j%` -> `1`
+- Make NetCDF Raster Layer: `u_%j%` -> `u_1`
+- Make NetCDF Raster Layer: `v_%j%` -> `v_1`
+- Raster Calculator: `in_memory\s_%j%` -> `in_memory\s_1`
+- Resample: `H:\esm296-4f\lab1\out\s_%j%.tif` -> `H:\esm296-4f\lab1\out\s_1.tif`
+
+- For: %j% -> 31
+- Make NetCDF Raster Layer: `u_%j%` -> `u_31`
+- Make NetCDF Raster Layer: `v_%j%` -> `v_31`
+- Raster Calculator: `in_memory\s_%j%` -> `in_memory\s_31`
+- Resample: `H:\esm296-4f\lab1\out\s_%j%.tif` -> `H:\esm296-4f\lab1\out\s_31.tif`
+
+...
+
+- For: %j% -> 361
+- Make NetCDF Raster Layer: `u_%j%` -> `u_361`
+- Make NetCDF Raster Layer: `v_%j%` -> `v_361`
+- Raster Calculator: `in_memory\s_%j%` -> `in_memory\s_361`
+- Resample: `H:\esm296-4f\lab1\out\s_%j%.tif` -> `H:\esm296-4f\lab1\out\s_361.tif`
+
+It's a good idea to [Validate the Entire Model](http://resources.arcgis.com/en/help/main/10.2/index.html#//002w0000003n000000) so that no shadows exist and it runs all the tools at each iteration.
 Export a PNG image of your model to `H:\github\courses\esm296-4f\lab1\img\uv_nc_to_s_tif_iterator.png`.
 
 ## Extract Country Summary
