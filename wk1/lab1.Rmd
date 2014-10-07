@@ -208,7 +208,7 @@ You'll need to create a new model (let's label it `country_wind_summary`) to sum
 
 ### Cell Statistics
 
-To summarize by year, you want to collapse all the monthly rasters into a single average raster using [Cell Statistics](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000) to get the MEAN wind speed on all the s_2013-##.tif rasters. I recommend outputting this raster to `H:\esm296-4f\lab1\out\s_2013_avg.tif` outside the file geodatabase. (Be careful not to include the s_001.tif from the first model so as to avoid double counting the first month.)
+To summarize by year, you want to collapse all the monthly rasters into a single average raster using [Cell Statistics](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000) to get the MEAN wind speed on all the s_*.tif rasters. I recommend using the browser ![](img/browse_icon.png) to select the multiple `H:\esm296-4f\lab1\out\s_*.tif` input ratsers, and outputting to `H:\esm296-4f\lab1\out\s_2013_avg.tif` outside the file geodatabase. (Be careful not to include the s_001.tif from the first model so as to avoid double counting the first month.)
 
 ### Zonal Statistics
 
