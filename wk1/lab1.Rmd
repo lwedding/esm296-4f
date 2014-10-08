@@ -269,14 +269,30 @@ From your RStudio courses project ("courses" should appear in upper right, not "
 
 ![](img/rstudio_git_ahead.png)
 
-If all's well you should see images rendered and your report live here (replace USER with your Github username):
+If all's well you should see images rendered and your report live (replace USER with your Github username):
 
-https://github.com/USER/courses/tree/master/esm296-4f/lab1
+https://github.com/USER/courses > esm296-4f > lab1
 
-and your issue for Lab 1 closed here:
+By default, Github shows the README.md of any folder. And your issue for Lab 1 should be closed here:
 
 https://github.com/USER/courses/issues/2
 
 Since you invited the instructors already to your github site, we should get notified when the issue is closed and can have a look.
 
 Congratulations! You're done.
+
+# Review
+
+Let's review what tools and concepts you applied in this lab.
+
+- **Multidimensional files**. The netcdf files (*.nc) were extracted for a given slice of data using a tool from the ArcGIS [Multidimension Toolbox](http://resources.arcgis.com/en/help/main/10.2/index.html#//004300000002000000).
+
+- **Time extraction and collapse**. You extracted of specific slices in time from the multidimensional data file, and then you collapsed these data to the mean value using the [Cell Statistics](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000) tool.
+
+- **Spatial Aggregation**. Once the temporal dimension was collapsed to a single raster, many pixels are found for any given country. You arrived at singular values (min/max/mean) for each country by using the [Zonal Statistics As Table](http://resources.arcgis.com/en/help/main/10.2/index.html#//009z000000w8000000) tool.
+
+- **Iteration in Model Builder**. You used the For iterator to loop through julian days at 30 day increments over the year. [Iterators](http://resources.arcgis.com/en/help/main/10.2/index.html#//00400000000n000000) can also be used to go over a list of rows in a shapefile or rasters in a folder. This is a natural segue to legitimate programming in the next lab.
+
+- **Git and Github**. You signed up for an online Github account, applied for educational discount entitling you to free private repository, created a repository, ran Git Bash commands to set it up locally on your machine and started using RStudio to manage the basics of adding files, making local commmits, and pushing these commits to your Github repository.
+
+- **Markdown**. The template provided for your final report is in the markdown format. It provides an easy way to create web style formatting (headers, bold, italics, links, images, etc) using minimal text. It can be used throughout Github (files, issues, wiki, etc) and for generating Rmarkdown documents in a variety of common formats (html, pdf, docx).
