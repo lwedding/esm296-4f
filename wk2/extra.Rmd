@@ -1,6 +1,6 @@
 ---
 title: "Lab 2: Extras"
-author: "Ben Best and James Frew"
+author: "Ben Best"
 date: "October 10, 2014"
 output: 
   html_document:
@@ -18,7 +18,7 @@ We have limited time with this class to expose you to the vast world of advanced
 
 ## R Script
 
-Check out the open-source cross-platform equivalent code to accomplish this task in R in [lab2.R](lab2.R). Feel free to open it and try it out yourself. You'll need to run the [lab2_setup.R](lab2_setup.R) first. It also outputs plots to an img folder. If we have time I'll gove over the script in class.
+Check out the open-source cross-platform equivalent code to accomplish this task in R in [lab2.R](lab2.R). Feel free to open it and try it out yourself. You'll need to run the [wind_country.R](wind_country.R) first. It also outputs plots to an img folder. If we have time I'll gove over the script in class.
 
 ## Use Dates in Loop
 
@@ -38,7 +38,7 @@ For those datetime functions to be available, you'll need to import the module p
 import datetime
 ```
 
-You can look at a cleaned up version of the script [uv-nc_to_country_monthly.py](uv-nc_to_country_monthly.py).
+You can look at a cleaned up version of the script [wind_country.py](wind_country.py).
 
 ## Create Raster Catalog for Time Slider Visualization
 

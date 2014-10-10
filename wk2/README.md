@@ -8,15 +8,15 @@
 
 - Thanks for the feedback! Here are the [survey results](https://docs.google.com/a/nceas.ucsb.edu/forms/d/1jwZg3MR2BrkDtRZl5QSkRjaXijL0JyUvAGiwkRQvBHc/viewanalytics#start=publishanalytics). We're listening. Pace is generally OK, but need clearer instructions, bigger picture relevance and less material. 
 
-- Project Proposals
+- [Project proposals](../project)
 
-8:50 - 9:10 Reorg files
+8:50 - 9:10 [Reorganize](https://rawgit.com/ucsb-bren/esm296-4f/master/wk2/reorg.html) files
 
-9:10 - 10:00 Python Program
+9:10 - 10:00 [Python](https://rawgit.com/ucsb-bren/esm296-4f/master/wk2/python.html) programming
 
-10:00 - 11:00 QGIS
+10:00 - 11:00 [QGIS](QGIS.md)
 
-11:00 - 11:30 EXTRA
+11:00 - 11:30 [Extra](extra.html)
 
 - finishing above, and time permitting:
 - R scripting

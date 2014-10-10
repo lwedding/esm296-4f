@@ -1,6 +1,15 @@
 ---
 title: "Filesystem Reorganization"
-output: html_document
+output: 
+  html_document:
+    theme: default # cerulean
+    highlight: haddock
+    toc: true
+    toc_depth: 4
+    fig_caption: true
+    number_sections: true
+    self_contained: true
+    css: css/octicons/octicons.css # https://octicons.github.com
 ---
 
 # Reorganize Filesystem
