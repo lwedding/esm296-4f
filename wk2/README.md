@@ -16,26 +16,24 @@
 
 10:00 - 11:00 [QGIS](QGIS.md)
 
-11:00 - 11:30 [Extra](extra.html)
+11:00 - 11:30 [Extra](https://rawgit.com/ucsb-bren/esm296-4f/master/wk2/extra.html) (time permitting)
  
+## FAQ
+
+- Q: **Why Github?** A: can collaborate with edits, even through web browser. Use in current projects (eg ohi-science/issues). Could apply to your group project / internships / etc.
+
+- Q: **Why use "in_memory"?** Just so don't clog disk. But doesn't behave well in ArcMap if have Add to Display in Model Builder. Not there when close and reopen (get red exclamation). Get similar effect if output of a model is input to another and it is marked as Intermediate in model.
+
+- Q: **Why not just select available layers for inputs to tools?** A: Best if you browse to find inputs on disk, especially for multiple input tools like Calculate Statistics, since then ensure works regardless of in memory layers that happen to be loaded in your ArcMap document and allows exported scripts to work (because don't have access to in memory layers not explicitly already part of the script).
+
 ## Resources
 
 - [Resources](Resources.Rmd)
 
-Cheat sheets
+### Cheat sheets
 
 - [git](cheatsheets/git_cheatsheet.pdf?raw=true)
 - [Rmarkdown](https://github.com/ucsb-bren/esm296-4f/blob/master/wk1/rmarkdown_cheatsheet.pdf?raw=true)
 - [R](cheatsheets/r_cheatsheet.pdf)
 - [R Spatial](http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/cheatsheet.html)
 - [Python](cheatsheets/python_cheat_sheet.pdf)
-
-
-## Review
-
-- Q: Why github? A: can collaborate with edits, even through web browser. Use in current projects (eg ohi-science/issues). Could apply to your group project / internships / etc.
-
-- Q: Why use "in_memory"? Just so don't clog disk. But doesn't behave well in ArcMap if have Add to Display in Model Builder. Not there when close and reopen (get red exclamation). Get similar effect if output of a model is input to another and it is marked as Intermediate in model.
-
-- Q: How best to select inputs? A: Best if you browse to find inputs on disk, especially for multiple input tools like Calculate Statistics, since then ensure works regardless of in memory layers and makes it easier to later script.
-
