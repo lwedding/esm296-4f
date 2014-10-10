@@ -51,7 +51,7 @@ To copy and paste, you can either:
 
 1. Use the Edit menu. To copy, you first set the mode to Edit > Mark and then left click and hold to select the text, and return to enter it into the clipboard. To paste, Edit > Paste.
 
-2. Use the Quick Edit shortcuts. Tick on Quick Edit from the Default menu. Then you don't need to use the menu. To copy, simply left-click and hold to select text and return to enter it into the clipboard. To paste, simply right-click into the window.
+2. Use the Quick Edit shortcuts. Tick on Quick Edit from the Properties menu. When you OK out of this it will prompt you that you cannot modify shortcut -- this is because of permissions. Then you don't need to use the menu. To copy, simply left-click and hold to select text and return to enter it into the clipboard. To paste, simply right-click into the window.
 </div>
 
 Let's start by moving the labs contents of `H:/esm296-4f/` to `H:/esm296-4f/labs/`. (NOTE: We're switching the file path seperator from Windows backslash `\` to the Linux / Mac / rest of the world forwardslash `/`. Also, lines beginning with `#` are explanatory comments and ignored by the Git Bash command line.)

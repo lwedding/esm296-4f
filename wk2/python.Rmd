@@ -60,7 +60,7 @@ The data this week is bundled into a zip file for you, the download of which is 
 
 You should've already reorganized your file system. Download the prepatory lab2 files here:
 
-  https://purl.org/net/frew/ESM296/wk2/lab2.7z
+  [lab2.7z](https://www.dropbox.com/s/bk0nh2d80f0qk81/lab2.7z?dl=0)
 
 I recommend placing this in `H:\esm296-4f\labs`, right clicking 7-Zip > Extract here.
 
