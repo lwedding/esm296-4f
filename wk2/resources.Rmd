@@ -1,0 +1,70 @@
+---
+title: "Programming Resources"
+output: html_document
+---
+
+# Further Resources
+
+We only have time to give you the briefest of introductions to Python and R in this course. Here are more resources for diving deeper.
+
+Cheat sheets
+
+- [git](references/git_cheatsheet.pdf?raw=true)
+- [Rmarkdown](https://github.com/ucsb-bren/esm296-4f/blob/master/wk1/rmarkdown_cheatsheet.pdf?raw=true)
+- [R](references/r_cheatsheet.pdf)
+- [R Spatial](http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/cheatsheet.html)
+- [Python](references/python_cheat_sheet.pdf)
+
+Python tutorials
+
+- [The Python Tutorial - Python.org](https://docs.python.org/2/tutorial/): authoritative, long document
+- [Python - CodeAcademy](http://www.codecademy.com/en/tracks/python): interactive 13 hr course
+- [Learn Python the Hard Way](http://learnpythonthehardway.org/book/): full outline of topics
+- [Software Carpentry: Python](http://www.software-carpentry.org/v5/novice/python/index.html)
+
+R tutorials
+
+- [Try R - CodeSchool.com](http://tryr.codeschool.com/levels/1/challenges/3): interactive console
+- [Intro to R - DataCamp.com](https://www.datacamp.com/courses/introduction-to-r): interactive console. Can even customize and [create your our own course](https://github.com/Data-Camp/datacamp).
+- [Intro R Lecture - UCLA](http://www.ats.ucla.edu/stat/r/seminars/intro.htm): good functional overview
+- [Crash Course in R - Spatial.ly](http://spatial.ly/2013/05/crash/)
+
+Useful Reference Sites for R
+
+- [Rdocumentation.org](http://Rdocumentation.org)
+- [CRAN Task Views](http://cran.r-project.org/web/views/)
+
+ArcGIS Python Tutorials
+
+- [GIS Programming and Automation - Penn State](https://www.e-education.psu.edu/geog485/)
+- [Intro to Python for ArcGIS - Stanford](https://sites.google.com/site/stanfordgis2013/introduction-to-python-for-arcgis)
+
+Open Source Python Tutorials
+
+- [Spatial Analysis with python - luxbulb.org](http://complex.luxbulb.org/howto/spatial-analysis-python)
+  - [Geospatial tutorial for SciPy 2013](https://github.com/kjordahl/SciPy2013)
+- [GDAL Tutorial - GDAL.org](http://www.gdal.org/gdal_tutorial.html)
+- [OGR Tutorial - GDAL.org](http://www.gdal.org/ogr_apitut.html)
+- [Python Spatial Analysis Library (PySAL) Tutorials](http://pysal.readthedocs.org/en/latest/users/tutorials/intro.html)
+
+R Spatial Tutorials
+
+- [R Spatial Tips](http://spatial.ly/r/): using sp objects, ggplot2, ggmaps, export to KML
+- [Geospatial in R](http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/introductionTalk.html): great intros and worked examples
+- [Spatial Data Analysis with R - URI](http://scicomp2014.edc.uri.edu/posts/2014-02-04-Hollister.html)
+- [R sp graphics example figures](http://rspatial.r-forge.r-project.org/gallery/)
+
+Deeper into Scientific Python
+
+- [iPython: Gallery of Interesting IPython Notebooks](https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks)
+
+Books on ArcGIS Python
+
+- [Python Scripting for ArcGIS](http://www.amazon.com/Python-Scripting-ArcGIS-Paul-Zandbergen/dp/1589482824)
+
+R Markdown
+
+- [rmarkdown_cheatsheet.pdf](rmarkdown_cheatsheet.pdf)
+- https://help.github.com/articles/markdown-basics
+- https://guides.github.com/features/mastering-markdown/
+- https://stackedit.io
