@@ -117,28 +117,31 @@ code > span.er { font-weight: bold; }
 <span class="kw">cd</span> /h/github/courses
 
 <span class="co"># move the contents of git mv esm296-4f/*  into this root folder of the repo</span>
-<span class="kw">git</span> mv esm296-4f/* .
+<span class="kw">git</span> mv esm296-4f/* .</code></pre>
+<p>You might get a fatal error if you already created a courses/README.md which would collide with coursese/esm296-4f/README.md. If that’s the case, you would want to do this.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># if you got a fatal error about README.md</span>
+<span class="kw">git</span> rm README.md</code></pre>
+<p>Proceed to run the following one line at a time (using copy &amp; paste).</p>
+<pre><code># remove this now empty directory esm296-4f
+rmdir esm296-4f
 
-<span class="co"># remove this now empty directory esm296-4f</span>
-<span class="kw">rmdir</span> esm296-4f
+# rename the Rproj file to match the containing folder
+git mv courses.Rproj github.Rproj
 
-<span class="co"># rename the Rproj file to match the containing folder</span>
-<span class="kw">git</span> mv courses.Rproj github.Rproj
+# git status should show a bunch of files being renamed
+git status
 
-<span class="co"># git status should show a bunch of files being renamed</span>
-<span class="kw">git</span> status
+# commit the changes with a message
+git commit -m &quot;reorganize courses repo to being dedicated to esm296-4f&quot;
 
-<span class="co"># commit the changes with a message</span>
-<span class="kw">git</span> commit -m <span class="st">&quot;reorganize courses repo to being dedicated to esm296-4f&quot;</span>
+# push changes to your github repo
+git push
 
-<span class="co"># push changes to your github repo</span>
-<span class="kw">git</span> push
+# change out of this directory so we can move it to the new path
+cd ~
 
-<span class="co"># change out of this directory so we can move it to the new path</span>
-<span class="kw">cd</span> ~
-
-<span class="co"># move github/courses to esm296-4f/github</span>
-<span class="kw">mv</span> github/courses esm296-4f/github</code></pre>
+# move github/courses to esm296-4f/github
+mv github/courses esm296-4f/github</code></pre>
 <p>Now you should have a more sane set of folders all contained within <code>H:\esm296-4f\</code> as described above: github, instruction and labs.</p>
 </div>
 <div id="rename-courses-to-esm296-4f-make-private-add-name" class="section level1">

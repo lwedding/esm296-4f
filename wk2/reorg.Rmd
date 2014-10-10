@@ -89,7 +89,18 @@ cd /h/github/courses
 
 # move the contents of git mv esm296-4f/*  into this root folder of the repo
 git mv esm296-4f/* .
+```
 
+You might get a fatal error if you already created a courses/README.md which would collide with coursese/esm296-4f/README.md. If that's the case, you would want to do this.
+
+```bash
+# if you got a fatal error about README.md
+git rm README.md
+```
+
+Proceed to run the following one line at a time (using copy & paste).
+
+```
 # remove this now empty directory esm296-4f
 rmdir esm296-4f
 
