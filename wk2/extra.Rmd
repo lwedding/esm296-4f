@@ -18,7 +18,7 @@ We have limited time with this class to expose you to the vast world of advanced
 
 ## R Script
 
-Check out the open-source cross-platform equivalent code to accomplish this task in R in [wind_country.R](wind_country.R). Feel free to open it and try it out yourself. You'll need to run the [r_setup.R](r_setup.R) first. It also outputs plots to an img folder. If we have time I'll gove over the script in class.
+Check out the open-source cross-platform equivalent code to accomplish this task in R in [wind_country.R](https://github.com/ucsb-bren/esm296-4f/blob/master/wk2/wind_country.R). Feel free to open it and try it out yourself. You'll need to run the [r_setup.R](https://github.com/ucsb-bren/esm296-4f/blob/master/wk2/r_setup.R) first. It also outputs plots to an img folder. If we have time I'll gove over the script in class.
 
 ## Use Dates in Loop
 
@@ -38,7 +38,7 @@ For those datetime functions to be available, you'll need to import the module p
 import datetime
 ```
 
-You can look at a cleaned up version of the script [wind_country.py](wind_country.py).
+You can look at a cleaned up version of the script [wind_country.py](https://github.com/ucsb-bren/esm296-4f/blob/master/wk2/wind_country.py).
 
 ## Create Raster Catalog for Time Slider Visualization
 
@@ -115,6 +115,4 @@ Here's more on creating Script Tools:
 - [ArcGIS Help 10.2 - Debugging script tools](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000m000000)
 
 - [ArcGIS Help 10.2 - Writing Python scripts](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000021000000)
-
-
                                                                                                                                                                                                                                                                                                                 

@@ -43,13 +43,14 @@ v = get.var.ncdf(v_ncdf, 'vwnd')
 
 # loop through julian days, incrementing every 30 days
 cat('\nlooping\n')
+s_avg_tif = sprintf('%s/s_avg.tif', out_dir)
 for (j in seq(1, 365, 30)){ # j = 1
   
   # set output vars
   s_tif = sprintf('%s/s_%03d.tif', out_dir, j)
   s_png = sprintf('%s/s_%03d.png', img_dir, j)
   cat(sprintf('  %s\n', basename(s_tif)))
-  
+
   # extract slice of data for julian day
   u_j = u[,,j]
   v_j = v[,,j]
@@ -112,7 +113,7 @@ cntry_p@data = cntry_p@data %>%
 
 # plot
 for (v in c('s_max','s_mean')){
-  png(sprintf('%s/%s.png', out_dir, v), width=1200, height=800)
+  png(sprintf('%s/%s.png', img_dir, v), width=1200, height=800)
   plot(cntry_p[v], col=brewer.pal(10, 'RdYlBu'))
   title(v)
   dev.off()
@@ -122,4 +123,4 @@ for (v in c('s_max','s_mean')){
 cntry_p@data %>%
   select(NAME, s_max, s_mean) %>%
   arrange(desc(s_max)) %>%
-  write.csv(sprintf('%s/country_wind.csv', out_dir, v))
+  write.csv(sprintf('%s/../country_wind.csv', img_dir, v))

@@ -7,12 +7,12 @@ import arcpy, datetime, os
 from arcpy.sa import *
 
 # input variables
-nc_u         = r"H:\esm296-4f\workspace\lab2\raw\uwnd.sig995.2013.nc"
-nc_v         = r"H:\esm296-4f\workspace\lab2\raw\vwnd.sig995.2013.nc"
-fc_cntry_in  = r"H:\esm296-4f\workspace\lab2\raw\ne_10m_admin_0_countries.shp"
-fc_cntry_out = r"H:\esm296-4f\workspace\lab2\lab2.gdb\countries"
+nc_u         = r"H:\esm296-4f\labs\lab2\raw\uwnd.sig995.2013.nc"
+nc_v         = r"H:\esm296-4f\labs\lab2\raw\vwnd.sig995.2013.nc"
+fc_cntry_in  = r"H:\esm296-4f\labs\lab2\raw\ne_10m_admin_0_countries.shp"
+fc_cntry_out = r"H:\esm296-4f\labs\lab2\lab2.gdb\countries"
 fld_cntry    = "NAME"
-dir_out      = r"H:\esm296-4f\workspace\lab2\out"
+dir_out      = r"H:\esm296-4f\labs\lab2\out"
 yr           = 2013
 
 # setup arcpy environment
