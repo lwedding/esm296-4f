@@ -89,7 +89,18 @@ cd /h/github/courses
 
 # move the contents of git mv esm296-4f/*  into this root folder of the repo
 git mv esm296-4f/* .
+```
 
+You might get a fatal error if you already created a courses/README.md which would collide with coursese/esm296-4f/README.md. If that's the case, you would want to do this.
+
+```bash
+# if you got a fatal error about README.md
+git rm README.md
+```
+
+Proceed to run the following one line at a time (using copy & paste).
+
+```
 # remove this now empty directory esm296-4f
 rmdir esm296-4f
 
@@ -114,23 +125,23 @@ mv github/courses esm296-4f/github
 
 Now you should have a more sane set of folders all contained within `H:\esm296-4f\` as described above: github, instruction and labs.
 
-# Rename courses to esm296-4f and make private
+# Rename courses to esm296-4f, make private, add name
 
 You should rename your courses repo on Github since that more accurately reflects this repo now being dedicated to just this course. While you're in the settings area, you'll make the repo private. You should've all recieved your educational discount by now (Please let us know if not).
 
-Start by visiting your repository (swap USER with your own):
+Start by visiting your repository (swap USER with your own Github username):
 
 https://github.com/USER/courses
 
 If you aren't signed in to github.com and your repository is already private, you'll get a 404 not found error. Just visit github.com and sign in, if needed.
 
-You should see **Settings** <span class="octicon octicon-tools"></span> in the right hand navigation pane for the repository (not your upper right user settings <span class="octicon octicon-gear"></span>). Click there and:
+1. Rename repo. Visit your repository **Settings** <span class="octicon octicon-tools"></span> in the right hand navigation pane for the repository and change Repository name from "courses" to "esm296-4f".
 
-- Change Repository name from "courses" to "esm296-4f", Rename
+1. Make repo private. Return to the **Settings** <span class="octicon octicon-tools"></span>, go to the "Danger Zone", and click "Make private". You'll have to enter "courses" as the repository name to confirm you really want to do this. You do -- you're fearless like that in the danger zone!
 
-- Return to the Settings <span class="octicon octicon-tools"></span>, go to the "Danger Zone", and click "Make private". You'll have to enter "courses" as the repository name to confirm you really want to do this. You do -- you're fearless like that in the danger zone!
+1. Add your name to user profile. Now visit your user settings <span class="octicon octicon-gear"></span> in upper right. Under Profile, be sure to include your First Last in Name (so we can match you to your Github username).
 
-Github will still redirect your old courses repo to this one. It's good practice to tell git the proper remote URL (or you'll get a minor warning). So let's replace the URL in the git configuration with the Git Bash sed ("stream editor") command.
+Github will still redirect from your old "courses"" repo to the renamed "esm296-4f". It's good practice to tell git the proper remote URL (or you'll get a minor warning). So let's replace the URL in the git configuration with the Git Bash sed ("stream editor") command.
 
 ```bash
 cd /h/esm296-4f/github
