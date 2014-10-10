@@ -132,7 +132,7 @@ Besides this nesting of sub-models, we've made a few minor modifications:
 
 The model above gets the job done, but it is a bit convoluted with nested models and the inline variable substitution. Really, this analysis motivates writing a script since that environment is much more suited to iterating through a loop and using variables.
 
-So you can easily export a ModelBuilder model to a python script, however models with Iterators do not work and nested models don't reveal the submodels they use. So to get started, you'll want to export from the lab2.tbx model to a Python script (Model Builder menu Model > Export > To Python Script...) the following:
+So you can easily export a ModelBuilder model to a python script, however models with Iterators do not work and nested models don't reveal the submodels they use. So to get started, you'll want to export from the lab2.tbx model to a Python script (Model Builder menu Model > Export > To Python Script...) the following (need to first create folder ``H:\esm296-4f\github\lab2`):
 
 - `uv-nc_to_s-tif` to `H:\esm296-4f\github\lab2\uv-nc_to_s-tif.py`
 
