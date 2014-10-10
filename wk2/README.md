@@ -33,7 +33,7 @@
 ### Cheat sheets
 
 - [git](cheatsheets/git_cheatsheet.pdf?raw=true)
+- [Python](cheatsheets/python_cheat_sheet.pdf)
 - [Rmarkdown](https://github.com/ucsb-bren/esm296-4f/blob/master/wk1/rmarkdown_cheatsheet.pdf?raw=true)
 - [R](cheatsheets/r_cheatsheet.pdf)
 - [R Spatial](http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/cheatsheet.html)
-- [Python](cheatsheets/python_cheat_sheet.pdf)

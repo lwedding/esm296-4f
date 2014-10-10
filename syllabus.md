@@ -55,13 +55,13 @@ Support materials:
 - [rmarkdown_cheatsheet](./rmarkdown_cheatsheet.pdf)
 
 
-### Friday, October 10 - Open-source GIS (Frew)
+### Friday, October 10 - Open-source GIS (Best; Frew)
 
-* **Lecture 2**: Introduction to Open-source GIS
-    * GDAL/OGR
-    * QGIS (w/ GRASS)
-    
-* **Lab 2**: Applications in Open-source GIS
+* **Part I**: Python programming (Best)
+
+* **Part II**: Open-source QGIS (Frew)
+
+[Week 2](wk2/README.md) has a tight schedule.
 
 ### Friday, October 17 - Extending ArcGIS with InVEST (Wedding)
 
