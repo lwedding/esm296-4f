@@ -118,7 +118,7 @@ Now you should have a more sane set of folders all contained within `H:\esm296-4
 
 You should rename your courses repo on Github since that more accurately reflects this repo now being dedicated to just this course. While you're in the settings area, you'll make the repo private. You should've all recieved your educational discount by now (Please let us know if not).
 
-Start by visiting your repository (swap USER with your own):
+Start by visiting your repository (swap USER with your own Github username):
 
 https://github.com/USER/courses
 
