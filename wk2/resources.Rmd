@@ -65,6 +65,6 @@ Books on ArcGIS Python
 R Markdown
 
 - [rmarkdown_cheatsheet.pdf](rmarkdown_cheatsheet.pdf)
-- https://help.github.com/articles/markdown-basics
-- https://guides.github.com/features/mastering-markdown/
-- https://stackedit.io
+- [markdown basics - Github help](https://help.github.com/articles/markdown-basics)
+- [mastering markdown - Github guides](https://guides.github.com/features/mastering-markdown/)
+- [stackedit.io](https://stackedit.io) for live preview of markdown
