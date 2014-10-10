@@ -28,7 +28,7 @@
 
 ## Resources
 
-- [Resources](Resources.Rmd)
+- [Resources](resources.Rmd)
 
 ### Cheat sheets
 
