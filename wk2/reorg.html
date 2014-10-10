@@ -64,7 +64,7 @@ code > span.er { font-weight: bold; }
 <div id="TOC">
 <ul>
 <li><a href="#reorganize-filesystem"><span class="toc-section-number">1</span> Reorganize Filesystem</a></li>
-<li><a href="#rename-courses-to-esm296-4f-and-make-private"><span class="toc-section-number">2</span> Rename courses to esm296-4f and make private</a></li>
+<li><a href="#rename-courses-to-esm296-4f-make-private-add-name"><span class="toc-section-number">2</span> Rename courses to esm296-4f, make private, add name</a></li>
 </ul>
 </div>
 
@@ -141,18 +141,18 @@ code > span.er { font-weight: bold; }
 <span class="kw">mv</span> github/courses esm296-4f/github</code></pre>
 <p>Now you should have a more sane set of folders all contained within <code>H:\esm296-4f\</code> as described above: github, instruction and labs.</p>
 </div>
-<div id="rename-courses-to-esm296-4f-and-make-private" class="section level1">
-<h1><span class="header-section-number">2</span> Rename courses to esm296-4f and make private</h1>
+<div id="rename-courses-to-esm296-4f-make-private-add-name" class="section level1">
+<h1><span class="header-section-number">2</span> Rename courses to esm296-4f, make private, add name</h1>
 <p>You should rename your courses repo on Github since that more accurately reflects this repo now being dedicated to just this course. While you’re in the settings area, you’ll make the repo private. You should’ve all recieved your educational discount by now (Please let us know if not).</p>
 <p>Start by visiting your repository (swap USER with your own):</p>
 <p><a href="https://github.com/USER/courses">https://github.com/USER/courses</a></p>
 <p>If you aren’t signed in to github.com and your repository is already private, you’ll get a 404 not found error. Just visit github.com and sign in, if needed.</p>
-<p>You should see <strong>Settings</strong> <span class="octicon octicon-tools"></span> in the right hand navigation pane for the repository (not your upper right user settings <span class="octicon octicon-gear"></span>). Click there and:</p>
-<ul>
-<li><p>Change Repository name from “courses” to “esm296-4f”, Rename</p></li>
-<li><p>Return to the Settings <span class="octicon octicon-tools"></span>, go to the “Danger Zone”, and click “Make private”. You’ll have to enter “courses” as the repository name to confirm you really want to do this. You do – you’re fearless like that in the danger zone!</p></li>
-</ul>
-<p>Github will still redirect your old courses repo to this one. It’s good practice to tell git the proper remote URL (or you’ll get a minor warning). So let’s replace the URL in the git configuration with the Git Bash sed (“stream editor”) command.</p>
+<ol style="list-style-type: decimal">
+<li><p>Rename repo. Visit your repository <strong>Settings</strong> <span class="octicon octicon-tools"></span> in the right hand navigation pane for the repository and change Repository name from “courses” to “esm296-4f”.</p></li>
+<li><p>Make repo private. Return to the <strong>Settings</strong> <span class="octicon octicon-tools"></span>, go to the “Danger Zone”, and click “Make private”. You’ll have to enter “courses” as the repository name to confirm you really want to do this. You do – you’re fearless like that in the danger zone!</p></li>
+<li><p>Add your name to user profile. Now visit your user settings <span class="octicon octicon-gear"></span> in upper right. Under Profile, be sure to include your First Last in Name (so we can match you to your Github username).</p></li>
+</ol>
+<p>Github will still redirect from your old “courses”&quot; repo to the renamed “esm296-4f”. It’s good practice to tell git the proper remote URL (or you’ll get a minor warning). So let’s replace the URL in the git configuration with the Git Bash sed (“stream editor”) command.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> /h/esm296-4f/github
 <span class="kw">sed</span> -i.bak s/courses/esm296-4f/g .git/config</code></pre>
 </div>
