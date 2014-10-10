@@ -1,4 +1,4 @@
-# Agenda
+## Agenda
 
 8:30 - 8:50 Introductions
 
@@ -12,72 +12,30 @@
 
 8:50 - 9:10 [Reorganize](https://rawgit.com/ucsb-bren/esm296-4f/master/wk2/reorg.html) files
 
-9:10 - 10:00 [Python](https://rawgit.com/ucsb-bren/esm296-4f/master/wk2/python.html) programming
+9:10 - 10:00 [Review](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html#review), [Python](https://rawgit.com/ucsb-bren/esm296-4f/master/wk2/python.html) programming
 
 10:00 - 11:00 [QGIS](QGIS.md)
 
 11:00 - 11:30 [Extra](extra.html)
-
-- finishing above, and time permitting:
-- R scripting
-- Time Slider
-- Script Tool
  
-# NOTES
+## Resources
+
+- [Resources](Resources.Rmd)
 
 Cheat sheets
 
-- [git](references/git_cheatsheet.pdf?raw=true)
+- [git](cheatsheets/git_cheatsheet.pdf?raw=true)
 - [Rmarkdown](https://github.com/ucsb-bren/esm296-4f/blob/master/wk1/rmarkdown_cheatsheet.pdf?raw=true)
-- [R](references/r_cheatsheet.pdf)
+- [R](cheatsheets/r_cheatsheet.pdf)
 - [R Spatial](http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/cheatsheet.html)
-- [Python](references/python_cheat_sheet.pdf)
-
-- [Review lab 1](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html#review)
-
-  - to answer: why github? can collaborate with edits, even online
-  
-  - use in current projects ohi-science/issues
-    
-  -  could apply to your group project / internships / etc.
-
-  - in_memory trick. just so don't clog disk. but doesn't behave well in ArcMap if Add to Display, not there when close and reopen (get red exclamation). Be sure to pull from disk. Get similar effect if output marked as Intermediate in model.
-    
-  - inputs to models best if on disk, not layers, especially for later scripting
-    
-  - conceptual. figure for lab1: collapse time (month) & space (country). embed in model.
-
-  - tech setup. RStudio menu Tools > Global Options... not transferring b/n computers so can't find git
-
-We'll go over open source R and Python techniques here.
-
-Here are links to view the course materials in prep:
-
-- [Lab 2](https://rawgit.com/ucsb-bren/esm296-4f_private/master/wk2/lab2.html)
-
-- [Lec 2](https://rawgit.com/ucsb-bren/esm296-4f_private/master/wk2/lec2.html)
-
-# TODO
-
-- review
+- [Python](cheatsheets/python_cheat_sheet.pdf)
 
 
-### RStudio
+## Review
 
-[TODO: layout images, panes described]
+- Q: Why github? A: can collaborate with edits, even through web browser. Use in current projects (eg ohi-science/issues). Could apply to your group project / internships / etc.
 
-- Console
+- Q: Why use "in_memory"? Just so don't clog disk. But doesn't behave well in ArcMap if have Add to Display in Model Builder. Not there when close and reopen (get red exclamation). Get similar effect if output of a model is input to another and it is marked as Intermediate in model.
 
-```r
-2 + 2
-```
-
-### RMarkdown
-
-Embed chunks of code.
-
-## Finding packages
-
-http://cran.r-project.org/web/views/Spatial.html
-
+- Q: How best to select inputs? A: Best if you browse to find inputs on disk, especially for multiple input tools like Calculate Statistics, since then ensure works regardless of in memory layers and makes it easier to later script.
 

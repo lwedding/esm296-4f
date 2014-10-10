@@ -18,7 +18,7 @@ We have limited time with this class to expose you to the vast world of advanced
 
 ## R Script
 
-Check out the open-source cross-platform equivalent code to accomplish this task in R in [lab2.R](lab2.R). Feel free to open it and try it out yourself. You'll need to run the [wind_country.R](wind_country.R) first. It also outputs plots to an img folder. If we have time I'll gove over the script in class.
+Check out the open-source cross-platform equivalent code to accomplish this task in R in [wind_country.R](wind_country.R). Feel free to open it and try it out yourself. You'll need to run the [r_setup.R](r_setup.R) first. It also outputs plots to an img folder. If we have time I'll gove over the script in class.
 
 ## Use Dates in Loop
 
@@ -44,14 +44,14 @@ You can look at a cleaned up version of the script [wind_country.py](wind_countr
 
 For kicks and giggles, by loading the rasters into a raster catalog, you can use the [Time Slider](http://resources.arcgis.com/en/help/main/10.2/index.html#//005z0000000z000000) and [create animations](http://resources.arcgis.com/en/help/main/10.2/index.html#/Creating_a_time_animation/000900000069000000/).
                                                                                                    
-                                                                                                   ![](img/arcmap_time-slider.png)
-                                                                                                   
-                                                                                                   Here's the code to populate the raster catalog.
-                                                                                                   
-                                                                                                   ```python
-                                                                                                   # create raster catalog for use with Time Slider and generating an animation
-                                                                                                   import os
-                                                                                                   rasters = ';'.join(['H:/esm296-4f/labs/lab2/out/s_2013-%02d.tif' % mo for mo in range(1, 13)])
+![](img/arcmap_time-slider.png)
+
+Here's the code to populate the raster catalog.
+
+```python
+# create raster catalog for use with Time Slider and generating an animation
+import os
+rasters = ';'.join(['H:/esm296-4f/labs/lab2/out/s_2013-%02d.tif' % mo for mo in range(1, 13)])
 catalog = 'H:/esm296-4f/labs/lab2/lab2.gdb/wind_catalog'
 
 arcpy.CreateRasterCatalog_management(os.path.dirname(catalog), os.path.basename(catalog), raster_management_type='UNMANAGED')
@@ -90,7 +90,7 @@ For example, find the [Multiple Ring Buffer](http://resources.arcgis.com/en/help
 
 Here's a snippet of code to setup input arguments:
   
-  ```python
+```python
 import sys
 
 u_nc = sys.argv[1] # "H:\\esm296-4f\\labs\\lab1\\raw\\uwnd.sig995.2013.nc"
@@ -104,10 +104,17 @@ In concept, we could make this script tool take input arguments like above for a
 
 Here's more on creating Script Tools:
   
-  * [ArcGIS Help 10.2 - A quick tour of creating tools with Python](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000002q000000)
-                                                                    * [ArcGIS Help 10.2 - What is a script tool?](http://resources.arcgis.com/en/help/main/10.2/index.html#//001500000006000000)
-                                                                                                                  * [ArcGIS Help 10.2 - Adding a script tool](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000001r000000)
-                                                                                                                                                              * [ArcGIS Help 10.2 - Setting script tool parameters](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000n000000)
-                                                                                                                                                                                                                    * [ArcGIS Help 10.2 - Debugging script tools](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000m000000)
-                                                                                                                                                                                                                                                                  * [ArcGIS Help 10.2 - Writing Python scripts](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000021000000)
+- [ArcGIS Help 10.2 - A quick tour of creating tools with Python](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000002q000000)
+
+- [ArcGIS Help 10.2 - What is a script tool?](http://resources.arcgis.com/en/help/main/10.2/index.html#//001500000006000000)
+
+- [ArcGIS Help 10.2 - Adding a script tool](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000001r000000)
+
+- [ArcGIS Help 10.2 - Setting script tool parameters](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000n000000)
+
+- [ArcGIS Help 10.2 - Debugging script tools](http://resources.arcgis.com/en/help/main/10.2/index.html#//00150000000m000000)
+
+- [ArcGIS Help 10.2 - Writing Python scripts](http://resources.arcgis.com/en/help/main/10.2/index.html#//002100000021000000)
+
+
                                                                                                                                                                                                                                                                                                                 

@@ -1,5 +1,5 @@
 ---
-title: "lec2"
+title: "wk2 extra lecture"
 output:
 #  html_document:
 #    toc: true
