@@ -386,7 +386,7 @@ The syntax check errors out and puts my cursor there, so something must not be r
 <div id="add-summary-functions-to-script" class="section level2">
 <h2><span class="header-section-number">3.10</span> Add Summary Functions to Script</h2>
 <p>Next, you’ll add the summary functions in <code>H:\esm296-4f\github\lab2\country-wind_summary.py</code> to the <code>H:\esm296-4f\github\lab2\wind_script.py</code> script. The first two lines of this country-wind_summary (import, arcpy.CheckOutExtension) are redundant and shouldn’t be added again. You’ll want to add the Local variables above and outside the for loop, and the process scripts to the bottom, dedented (ie aligned flush left), after and outside the for loop.</p>
-<p>Here’s a nice Pythonic way (ie a <a href="https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions">list comprehension</a>) to set a variable to being the list of all the s_#_tif rasters.</p>
+<p>Here’s a nice Pythonic way (ie a <a href="https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions">list comprehension</a>) to set a variable to being the list of all the s_#_tif rasters. So you’ll want to replace these two chunks of code.</p>
 <p>from:</p>
 <pre class="sourceCode python"><code class="sourceCode python">s_0_tif = <span class="st">&quot;H:</span><span class="ch">\\</span><span class="st">esm296-4f</span><span class="ch">\\</span><span class="st">labs</span><span class="ch">\\</span><span class="st">lab2</span><span class="ch">\\</span><span class="st">out</span><span class="ch">\\</span><span class="st">s_0.tif&quot;</span>
 s_120_tif = <span class="st">&quot;H:</span><span class="ch">\\</span><span class="st">esm296-4f</span><span class="ch">\\</span><span class="st">labs</span><span class="ch">\\</span><span class="st">lab2</span><span class="ch">\\</span><span class="st">out</span><span class="ch">\\</span><span class="st">s_120.tif&quot;</span>
@@ -410,14 +410,14 @@ arcpy.gp.CellStatistics_sa(s_tifs, s_avg_tif, <span class="st">&quot;MEAN&quot;<
 <p>Try running the first line above in the Interactive Window. Then run <code>s_tifs</code> to show the result. Next: <code>type(s_tifs)</code>. Let’s inspect the length of the list with <code>len(s_tifs)</code>.</p>
 <p>Notice that we’re now feeding to the first argument of the <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//009z0000007q000000">Cell Statistics</a> function a list rather than a string. This is a different format than the original single string with paths delimited internally by semicolons. ArcGIS functions that allow multiple inputs for a given argument will generally accept either, but it’s nicer programmatically to be able to manipulate a list already seperated out by items. So with a list comprehension, you’re essentially running a for loop to generate the list. Here’s an equivalent (and more verbose) way to create this list.</p>
 <pre class="sourceCode python"><code class="sourceCode python">s_tifs = []
-<span class="kw">for</span> j in <span class="dt">range</span>(<span class="dv">1</span>, <span class="dv">365</span>, <span class="dv">30</span>):
+<span class="kw">for</span> j in <span class="dt">range</span>(<span class="dv">0</span>, <span class="dv">365</span>, <span class="dv">30</span>):
     s_tifs.append(<span class="st">&quot;h:</span><span class="ch">\\</span><span class="st">esm296-4f</span><span class="ch">\\</span><span class="st">labs</span><span class="ch">\\</span><span class="st">lab2</span><span class="ch">\\</span><span class="st">out</span><span class="ch">\\</span><span class="st">s_</span><span class="ot">%03d</span><span class="st">.tif&quot;</span> % j)</code></pre>
 <p>Note that we have to “instantiate” the list (ie create an instance of it, in this case empty) so that we can then append to it. All lists have the append method. You can inspect which methods and properties are available for any given object with the dir function in Python <code>dir([])</code> and then for more on that function <code>help([].append)</code>.</p>
 <p>Ok, repeat the Delete contents, Check syntax, Close ArcMap steps as above before running the whole script again.</p>
 </div>
 <div id="change-to-eez-data" class="section level2">
 <h2><span class="header-section-number">3.11</span> Change to EEZ data</h2>
-<p>Update the country input data to using the EEZ shapefile. You’ll need to also update the ‘NAME’ field to a similarly sensible field in this shapefile.</p>
+<p>So far the script is calculating the terrestrial wind. Now update the in_countries variable in your script to use the marine exclusive economic zone (EEZ) describe above in the Data section. You’ll need to also update the field parameter used previously to define your zones and then join back (ie the field “NAME” does not exist in the EEZ shapefile).</p>
 <p>Repeat with Delete contents, Check syntax, Close ArcMap steps as above before running the whole script again.</p>
 </div>
 <div id="turn-in-report" class="section level2">

@@ -423,7 +423,7 @@ If you have many layers in an ArcMap document, it can easily get overwhelming. H
 
 Next, you'll add the summary functions in `H:\esm296-4f\github\lab2\country-wind_summary.py` to the `H:\esm296-4f\github\lab2\wind_script.py` script. The first two lines of this country-wind_summary (import,  arcpy.CheckOutExtension) are redundant and shouldn't be added again. You'll want to add the Local variables above and outside the for loop, and the process scripts to the bottom, dedented (ie aligned flush left), after and outside the for loop.
 
-Here's a nice Pythonic way (ie a [list comprehension](https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions)) to set a variable to being the list of all the s_#_tif rasters.
+Here's a nice Pythonic way (ie a [list comprehension](https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions)) to set a variable to being the list of all the s_#_tif rasters. So you'll want to replace these two chunks of code.
 
 from:
 
@@ -459,7 +459,7 @@ Notice that we're now feeding to the first argument of the [Cell Statistics](htt
 
 ```python
 s_tifs = []
-for j in range(1, 365, 30):
+for j in range(0, 365, 30):
     s_tifs.append("h:\\esm296-4f\\labs\\lab2\\out\\s_%03d.tif" % j)
 ```
     
@@ -469,7 +469,7 @@ Ok, repeat the Delete contents, Check syntax, Close ArcMap steps as above before
 
 ## Change to EEZ data
 
-Update the country input data to using the EEZ shapefile. You'll need to also update the 'NAME' field to a similarly sensible field in this shapefile.
+So far the script is calculating the terrestrial wind. Now update the in_countries variable in your script to use the marine exclusive economic zone (EEZ) describe above in the Data section. You'll need to also update the field parameter used previously to define your zones and then join back (ie the field "NAME" does not exist in the EEZ shapefile).
 
 Repeat with Delete contents, Check syntax, Close ArcMap steps as above before running the whole script again.
 
