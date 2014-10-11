@@ -469,7 +469,7 @@ Ok, repeat the Delete contents, Check syntax, Close ArcMap steps as above before
 
 ## Change to EEZ data
 
-So far the script is calculating the terrestrial wind. Now update the in_countries variable in your script to use the marine exclusive economic zone (EEZ) describe above in the Data section. You'll need to also update the field parameter used previously to define your zones and then join back (ie the field "NAME" does not exist in the EEZ shapefile; You can crack open ArcMap, add the EEZ).
+So far the script is calculating the terrestrial wind. Now update the in_countries variable in your script to use the marine exclusive economic zone (EEZ) describe above in the Data section. You'll need to also update the field parameter used previously to define your zones and then join back (ie the field "NAME" does not exist in the EEZ shapefile; you can look at its table from ArcMap).
 
 Repeat with Delete contents, Check syntax, Close ArcMap steps as above before running the whole script again.
 
