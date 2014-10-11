@@ -102,7 +102,7 @@ It's a good idea to add this .gitignore file, commit and push to github so that 
 
 ## Inspect and Run Lab 1 Model
 
-A single model has been created for you which replicates lab 1. Let's have a look by opening ArcMap and saving a new blank ArcMap document to `H:\esm296-4f\labs\lab2\lab2.mxd`. Once you save the document the other contents in the containing "Home" folder become readily visible in Catalog. Now from within ArcMap's Catalog pane you should see lab2.tbx, right-click the `country-wind_summary_Params` model > Edit (which is generally how you open models to work on).
+A single model has been created for you which replicates lab 1. Let's have a look by opening ArcMap and saving a new blank ArcMap document to `H:\esm296-4f\labs\lab2\lab2.mxd`. Once you save the document the other contents in the containing "Home" folder become readily visible in Catalog. Now from within ArcMap's Catalog pane you should see lab2.tbx, right-click the `wind_model_Params` model > Edit (which is generally how you open models to work on).
 
 ![](img/wind_model_Params.png)
 
@@ -469,19 +469,19 @@ Ok, repeat the Delete contents, Check syntax, Close ArcMap steps as above before
 
 ## Change to EEZ data
 
-So far the script is calculating the terrestrial wind. Now update the in_countries variable in your script to use the marine exclusive economic zone (EEZ) describe above in the Data section. You'll need to also update the field parameter used previously to define your zones and then join back (ie the field "NAME" does not exist in the EEZ shapefile).
+So far the script is calculating the terrestrial wind. Now update the in_countries variable in your script to use the marine exclusive economic zone (EEZ) describe above in the Data section. You'll need to also update the field parameter used previously to define your zones and then join back (ie the field "NAME" does not exist in the EEZ shapefile; You can crack open ArcMap, add the EEZ).
 
 Repeat with Delete contents, Check syntax, Close ArcMap steps as above before running the whole script again.
 
 ## Turn in Report
 
-Produce a similar [report in markdown](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html#report-in-markdown) as lab1 but now for offshore wind at `H:\esm296-4f\github\lab2\README.md` with:
+Based on the output countries from your script, produce a similar [map](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html#create-map-of-countries-wind-production) and markdown [report](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html#report-in-markdown) as lab1 but now for offshore wind and at `H:\esm296-4f\github\lab2\README.md` with:
 
-- map by EEZ (no need to do the model builder images)
+- map of EEZ colored by max (no need to do the model builder images)
 - top 3 countries by max and mean
 - link to your final wind_script.py script
 
-When you commit this README use the message to close your lab 2 issue (or visit the issue and close it seperately).
+When you [commit](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html#git-commit-and-push-from-rstudio) this README use the message to close your lab 2 issue (or visit the issue and close it seperately).
 
 # Review
 
