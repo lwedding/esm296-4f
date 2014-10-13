@@ -252,6 +252,7 @@ a + c</code></pre>
 <p>That last line should give you an error <code>TypeError: unsupported operand type(s) for +: 'int' and 'str'</code> since you cannot add an integer and a string. You can however convert a number to a string and add two strings together. Note that quotes can be either <code>&quot;</code> or <code>'</code> which are functionally equivalent.</p>
 <div id="string-formatting-and-variable-substitution" class="section level3">
 <h3><span class="header-section-number">3.7.1</span> String Formatting and Variable Substitution</h3>
+<p>Next, try:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">str</span>(a) + c 
 <span class="dt">str</span>(a) + <span class="st">' '</span> + c 
 <span class="co">'%s %d'</span> % (a, c)
@@ -261,7 +262,7 @@ a + c</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">j = <span class="dv">1</span>
 <span class="co">&quot;slice %d&quot;</span> % j
 <span class="co">&quot;slice %d&quot;</span></code></pre>
-<p>Notice how in the first instance <code>%d</code> is replaced by the value of <code>j</code>. But in the second, without a variable and extra <code>%</code> outside the string to indicate substitution the string <code>&quot;slice %d&quot;</code> is taken literally. So the presence of a % after the string “in_memory\s_%03d” sets up the string to accept input variables for substitution, ie %03d formatting for the value of j.</p>
+<p>Notice how in the first instance <code>%d</code> is replaced by the value of <code>j</code>. But in the second, without a variable <code>j</code> and extra <code>%</code> outside the string <code>&quot;slice %d&quot;</code> to indicate substitution the string <code>&quot;slice %d&quot;</code> is taken literally. So the presence of a <code>%</code> after the string <code>&quot;slice %d&quot;</code> sets up the string to accept input variables for substitution, ie <code>&quot;%d&quot;</code> to swap out for the value of variable <code>j</code>, which gets formatted as <code>&quot;1&quot;</code>.</p>
 </div>
 <div id="module-import-whitespace-for-loop-zero-based-indexing" class="section level3">
 <h3><span class="header-section-number">3.7.2</span> Module Import, Whitespace, For Loop, Zero-Based Indexing</h3>

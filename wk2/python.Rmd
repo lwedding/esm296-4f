@@ -206,6 +206,8 @@ That last line should give you an error `TypeError: unsupported operand type(s) 
 
 ### String Formatting and Variable Substitution
 
+Next, try:
+
 ```python
 str(a) + c 
 str(a) + ' ' + c 
@@ -223,7 +225,7 @@ j = 1
 "slice %d"
 ```
 
-Notice how in the first instance `%d` is replaced by the value of `j`. But in the second, without a variable and extra `%` outside the string to indicate substitution the string `"slice %d"` is taken literally. So the presence of a % after the string "in_memory\\s_%03d" sets up the string to accept input variables for substitution, ie %03d formatting for the value of j.
+Notice how in the first instance `%d` is replaced by the value of `j`. But in the second, without a variable `j` and extra `%` outside the string `"slice %d"` to indicate substitution the string `"slice %d"` is taken literally. So the presence of a `%` after the string `"slice %d"` sets up the string to accept input variables for substitution, ie `"%d"` to swap out for the value of variable `j`, which gets formatted as `"1"`.
 
 ### Module Import, Whitespace, For Loop, Zero-Based Indexing
 
