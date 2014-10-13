@@ -204,6 +204,8 @@ a + c
 
 That last line should give you an error `TypeError: unsupported operand type(s) for +: 'int' and 'str'` since you cannot add an integer and a string. You can however convert a number to a string and add two strings together. Note that quotes can be either `"` or `'` which are functionally equivalent.
 
+### String Formatting and Variable Substitution
+
 ```python
 str(a) + c 
 str(a) + ' ' + c 
@@ -212,6 +214,18 @@ str(a) + ' ' + c
 ```
 
 The second two lines use [string formatting operations](https://docs.python.org/release/2.4.4/lib/typesseq-strings.html) in which the `%` character is special within a string, `%s` for string or `%d` for digit, and outside it seperates the corresponding arguments. In the last case `%03d`, you can zero-pad digits, which is a useful for enbling files to nicely sort (like julian days of our example).
+
+Let's try a couple more examples which you'll need to fully understand to translate your exported Python code into working code that updates values based on each iteration of a loop.
+
+```python
+j = 1
+"slice %d" % j
+"slice %d"
+```
+
+Notice how in the first instance `%d` is replaced by the value of `j`. But in the second, without a variable and extra `%` outside the string to indicate substitution the string `"slice %d"` is taken literally. So the presence of a % after the string "in_memory\\s_%03d" sets up the string to accept input variables for substitution, ie %03d formatting for the value of j.
+
+### Module Import, Whitespace, For Loop, Zero-Based Indexing
 
 Let's try importing a module.
 
