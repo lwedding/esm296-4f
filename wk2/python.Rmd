@@ -180,7 +180,7 @@ Once again, the "#" character begins a comment. Note the commented names for the
 
 - **# Process: ***
 
-    Here are the tools are doing the actual work. Notice the correspondence between the individual arguments set here and how you filled out the parameters of the Model Builder forms. Strings are used for all arguments except the input and output paths, which are assigned to variables. In fact any argument can be assigned a variable.
+    Here the tools are doing the actual work. Notice the correspondence between the individual arguments set here and how you filled out the parameters of the Model Builder forms. Strings are used for all arguments except the input and output paths, which are assigned to variables. In fact any argument can be assigned a variable.
 
 So what's the advantage of assigning a variable? It makes it easy to change in one location and use in multiple locations. If you don't expect it to change and are only using in one place then you probably don't need to assign it to a variable; if it's not going to "vary" then no need for a variable.
 
