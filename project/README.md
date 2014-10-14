@@ -20,7 +20,7 @@ If you choose ecosystem service, please coordinate with Lisa as to which service
 
 ## Submit Proposal as project/README.md
 
-Submit your proposal to `H:\esm296-4f\github\lab2\README.md`. Be sure to commit and push this file along with any other files (like images) referenced.
+Submit your proposal to `H:\esm296-4f\github\project\README.md`. Be sure to commit and push this file along with any other files (like images) referenced.
 
 ## Tips for Markdown
 
