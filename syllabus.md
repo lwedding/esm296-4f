@@ -1,3 +1,15 @@
+---
+layout: article
+title: "Syllabus"
+excerpt: "launch point to rest of course materials"
+image:
+  feature:
+  teaser:
+  thumb:
+share: false
+ads: false
+---
+
 # ESM 296-4F<br>Advanced Special Topics in GIS (2 units)
 
 nice short link to this document: <https://tinyurl.com/ESM296>
