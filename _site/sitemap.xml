@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/author-override/</loc>
+    
+    <lastmod>2014-06-23T13:19:16-07:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/video-post-test/</loc>
+    
+    <lastmod>2014-05-31T20:14:02-07:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/image-grids/</loc>
+    
+    <lastmod>2014-05-30T08:51:25-07:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/media/another-sample-media-page/</loc>
+    
+    <lastmod>2014-05-10T00:00:00-07:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/welcome-to-jekyll/</loc>
+    
+    <lastmod>2014-02-17T00:00:00-08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/media/sample-media-page/</loc>
+    
+    <lastmod>2014-02-03T00:00:00-08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/readability-feature-post/</loc>
+    
+    <lastmod>2013-05-23T00:00:00-07:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/sample-post-images/</loc>
+    
+    <lastmod>2013-05-22T00:00:00-07:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/readability-post/</loc>
+    
+    <lastmod>2012-05-22T00:00:00-07:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/sample-post/</loc>
+    
+    <lastmod>2011-03-10T00:00:00-08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/media/</loc>
+    <lastmod>2014-10-12T11:34:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/getting-started/</loc>
+    <lastmod>2014-10-12T11:34:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/about/</loc>
+    <lastmod>2014-10-12T11:34:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/</loc>
+    <lastmod>2014-10-12T11:34:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/terms/</loc>
+    <lastmod>2014-10-12T11:34:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>//ucsb-bren.github.io/esm296-4f/articles/</loc>
+    <lastmod>2014-10-12T11:34:09-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+</urlset>
