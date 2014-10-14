@@ -8,6 +8,7 @@ image:
   thumb:
 share: false
 ads: false
+toc: true
 ---
 
 # ESM 296-4F<br>Advanced Special Topics in GIS (2 units)

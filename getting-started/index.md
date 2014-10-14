@@ -9,7 +9,7 @@ image:
   feature:
   teaser:
   thumb:
-toc: true
+toc: false
 share: false
 ---
 
