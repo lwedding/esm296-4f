@@ -21,13 +21,22 @@
         <p>Advanced Topics in GIS</p>
         <p class="view"><a href="https://github.com/ucsb-bren/esm296-4f">View the Project on GitHub <small>ucsb-bren/esm296-4f</small></a></p>
         <ul>
+        <!--  OLD default github pages...
           <li><a href="https://github.com/ucsb-bren/esm296-4f/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/ucsb-bren/esm296-4f/tarball/master">Download <strong>TAR Ball</strong></a></li>
+        -->
           <li><a href="https://github.com/ucsb-bren/esm296-4f">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
-        <h3>
+      
+# ESM 296-4F<br>Advanced Special Topics in GIS (2 units)
+
+See [syllabus.md](syllabus.md)
+
+<!-- OLD default github pages...
+      
+<h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
@@ -58,6 +67,8 @@ $ git checkout gh-pages
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+
+-->
       </section>
     </div>
     <footer>
