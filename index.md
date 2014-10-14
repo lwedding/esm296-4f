@@ -7,4 +7,4 @@ image:
 
 # ESM 296-4F<br>Advanced Special Topics in GIS (2 units)
 
-See [syllabus.md]({{ site.url }}/syllabus.html)
+See [Syllabus]({{ site.url }}/syllabus.html)

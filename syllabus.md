@@ -54,18 +54,18 @@ The **final group project** is **100 points total** and a Project Proposal is du
 * Course Intro - Weekly lab topics, final project & grading
     * slides ([PDF](https://purl.org/net/frew/ESM296/course_intro_slides.pdf))
 
-* [**Lecture 1**](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lec1.html):
+* [**Lecture 1**](./wk1/lec1.html):
     * Introduction to Programming in ArcGIS
         * ArcGIS Model Builder - > Python
     * Intro to Github
     * Programming with ArcPy
     
-* [**Lab 1**](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/lab1.html): Wind Energy Lab
+* [**Lab 1**](./wk1/lab1.html): Wind Energy Lab
 
 Support materials:
 
-- [git](https://rawgit.com/ucsb-bren/esm296-4f/master/wk1/git.html)
-- [rmarkdown_cheatsheet](./rmarkdown_cheatsheet.pdf)
+- [git](./wk1/git.html)
+- [rmarkdown_cheatsheet](./wk1/rmarkdown_cheatsheet.pdf)
 
 
 ### Friday, October 10 - Open-source GIS (Best; Frew)
